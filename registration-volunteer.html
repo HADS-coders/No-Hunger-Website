@@ -1,0 +1,954 @@
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/*TO STYLE THE BODY*/
+body {
+  font-family: Arial;
+  padding: 10px;
+  background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  padding-block-end: 30px;
+  padding-bottom: 40px;
+  background:inherit;
+  block-size: 250px;
+}
+
+.header .h1
+{
+  font-size: 45px;
+  position: absolute;
+  left: 500px;
+  top: 70px;
+}
+.header  .img
+{
+  position:absolute;
+  top:40px;
+  left:250px;
+}
+.header .h2
+{
+  font-size: 35px;
+  position: absolute;
+  left: 510px;
+  top: 120px;
+}
+ .header .marquee
+ {
+  font-size: 19px;
+  position: absolute;
+  top: 190px;
+ }
+
+
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  z-index: 1;
+}
+
+.navimage
+{
+  width: 40px;
+  height: 40px;
+  border-radius:50%;
+}
+
+.navbar-right {
+  float: right;
+}
+
+/* Style the topnav links */
+.navbar a {
+  font-size: 31px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown
+{
+  float:left;
+  overflow: hidden;
+}
+
+.dropdown .dropbutton
+{
+  font-size: 31px;  
+  border: none;
+  outline: none;
+  color:black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+/* Change color on hover */
+.navbar a:hover ,.dropdown:hover .dropbutton{
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: inherit;
+  padding-left: 20px;
+}
+
+
+/* Add a card effect for articles */
+.card1{
+  background-color:white;
+  padding: 20px;
+  margin-top: 20px;
+  block-size: 1100px;
+  color: black;
+}
+.card {
+  background-color:white;
+  padding: 20px;
+  margin-top: 20px;
+  color: black;
+}
+.ctext{
+  color: black;
+}
+
+.card2{
+width: 359px;
+height:450px;
+padding: 20px;
+margin-top: 20px;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button{
+  color:black;
+  background-color: white;
+ text-decoration: none;
+ padding: 5px;
+}
+
+.button:hover
+{
+  color:blue;
+  background-color: white;
+  padding: 5px;
+
+}
+
+.button1{
+  font-size: 21px;
+ color:white;
+ background-color: transparent;
+ text-decoration: none;
+ padding-right: 15px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ padding-left: 5px;
+}
+
+.button1:hover
+{
+  color:black;
+  background-color: white;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  
+}
+
+input[type=text]
+{
+width:100%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 0;
+color:black;
+background-color: inherit;
+border:1px solid black;
+}
+.select
+{
+  background-color:white;
+  color:black;
+}
+
+
+input[type=email],select
+{
+width:100%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 0;
+color: black;
+background-color: inherit;
+border:1px solid black;
+}
+
+input[type=number]
+{
+width:100%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 0;
+color: black;
+background-color: inherit;
+border:1px solid black;
+}
+
+input[type=password]
+{
+width:100%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 0;
+color:black;
+background-color: inherit;
+border:1px solid black;
+}
+
+
+.select1
+{
+  width:40%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 5px;
+color: black;
+background-color: white;
+border:1px solid black;
+}
+
+
+
+input[type=submit]
+{
+width:20%;
+height: 50px;
+padding: 10px;
+font-size: 19;
+margin: 15px 0;
+color: black;
+background-color: white;
+border:1px solid black;
+}
+
+input[type=submit]:hover
+{
+background-color: rgb(56, 182, 56);
+}
+
+ label
+ {
+    font-size: 23;
+    font: bolder;
+    color: black;
+    
+ }
+ 
+ .new-h1
+ {
+   color: black;
+ }
+
+/*slideshow*/
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 359px;
+  height:450px;
+  position: absolute;
+  top: 360px;
+  left: 1200px;
+  margin: auto;
+}
+
+.simage
+{
+    width: 359px;
+height:450px;
+}
+
+/* Caption text */
+.text {
+  color: white;
+  font-size: 25px;
+  font: bolder;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* MODAL START */
+
+/* Full-width input fields */
+.input1{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.button1 {
+  font-size: 23;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+}
+
+.button1:hover {
+  opacity: 0.8;
+}
+
+/*Styles for the cancel button */
+.cancelbtn {
+  font-size: 23;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  block-size: 350px;
+}
+
+img.avatar1 {
+  padding-top: 260px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+}
+
+img.avatar2 {
+  padding:20px;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+}
+
+img.avatar3 {
+  padding: 20px;
+ text-align: right;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+
+/* The Modal (background) */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal1-content {
+  background-color: white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888; /* Could be more or less, depending on screen size */
+  color: white;
+  width: 80%;
+  height: 80%;
+}
+.modal1 .modal1-dailog
+{
+  position:absolute;
+  left:200px;
+  width: 1250px;
+  height: 500px;
+}
+
+.mtxt
+{
+  text-align: center;
+  color: black;
+}
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 140px;
+  top: 70px;
+  color:black;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+img.avatar4 {
+  width: 30%;
+  height:100%;
+  border-radius: 50%;
+}
+
+.container2 {
+  padding: 16px;
+  background-color: white;
+}
+
+span.psw{
+  color: black;
+  float: right;
+  padding-top: 16px;
+}
+
+span.psw a{
+  color:black;
+  float: right;
+  padding-left: 5px;
+}
+
+/* The Modal (background) */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal2-content {
+  background-color: white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close2 {
+  position:absolute;
+  right: 175px;
+  top: 140px;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+.modal3 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal3-content {
+  background-color: white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal4 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal4-content {
+  background-color: white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+.psw {
+     display: block;
+     float: none;
+     color: black;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/*MODAL END*/
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
+  <div class="img"><image src="/home/sufyan/Desktop/web_page/home/weblogo.jpg"  width="190" height="190" ></image></div> 
+  <h2 class="h2">the motive line</h2>
+  <marquee class="marquee"><h3>Something that will move here.</h3></marquee>
+</div>
+
+<div class="navbar">
+  <a href="/home/sufyan/Desktop/web_page/home.html"><image src="/home/sufyan/Desktop/web_page/home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <div class="dropdown">
+    <button class="dropbutton">Donation</button>
+    <div class="dropdown-content">
+      <a href="#">Food</a>
+      <a href="#">Money</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbutton">Registration</button>
+    <div class="dropdown-content">
+      <a href="/home/sufyan/Desktop/web_page/registration-volunteer.html">Volunteer</a>
+      <a href="/home/sufyan/Desktop/web_page/registration-ngo.html">NGO</a>
+      <a href="/home/sufyan/Desktop/web_page/registration-hotel.html">Hotel</a>
+    </div>
+  </div>   
+  <a href="#">Provide Info</a>
+  <div class="navbar-right"> 
+    <a onclick="document.getElementById('id01').style.display='block'"><image src="/home/sufyan/Desktop/web_page/home/avatar.jpg" width="35" height="35" class="navimage"></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card1">
+      <h1 class="new-h1">VOLUNTEER'S REGISTRATION</h1>
+    <form>
+    <label for="fname" >Name</label>
+     <input type="text" id="fname" placeholder="Enter Full Name" required>
+     <label for="uname" >User Name</label>
+     <input type="text" id="uname" placeholder="Enter User Name" required>
+     <label for="email" >Email</label>
+     <input type="email" id="email" placeholder="Enter Email ID" required>
+     <label for="Number" > Mobile Number</label>
+     <input type="text" id="number" placeholder="Enter Mobile No." required>
+     <label for="pass">Password</label>
+     <input type="password" id="pass" placeholder="Enter password" required>
+     <label for="confirm">Confirm password</label>
+     <input type="password" id="confirm" placeholder="Confirm password" required>
+     <select class="select">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+     </select>
+     <p></p>
+     <label>How many days you will like to work with us ?</label>
+     <p></p>
+     <select class="select1">
+      <option value="" hidden>From</option>
+      <option value="1">Sunday</option>
+      <option value="2">Monday</option>
+      <option value="3">Tuesday</option>
+      <option value="4">Wednesday</option>
+      <option value="5">Thursday</option>
+      <option value="6">Friday</option>
+      <option value="7">Saturday</option>
+      </select>
+     <select class="select1">
+      <option value="" hidden>Till</option>
+      <option value="1">Sunday</option>
+      <option value="2">Monday</option>
+      <option value="3">Tuesday</option>
+      <option value="4">Wednesday</option>
+      <option value="5">Thursday</option>
+      <option value="6">Friday</option>
+      <option value="7">Saturday</option>
+     </select>
+      <p></p>
+     <input type="submit">
+    </form>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card2">
+
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 4</div>
+          <img src="/home/sufyan/Desktop/web_page/volunteer/volunteer1.jpg" class="simage">
+          <h2 class="text">Volunteer's are the root elements of our team.</h2>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 4</div>
+          <img src="/home/sufyan/Desktop/web_page/volunteer/volunteer2.jpg" class="simage">
+          <h2 class="text">Volunteers has to collect the food from hotels.</h2>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="/home/sufyan/Desktop/web_page/volunteer/volunteer3.jpg" class="simage">
+          <h2 class="text">Pack the food provided by the hotels.</h2>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="/home/sufyan/Desktop/web_page/volunteer/volunteer4.jpg" class="simage">
+          <h2 class="text">Distribute the packets to the needy.</h2>
+        </div>
+        
+        </div>
+
+    </div>
+    <div class="card">
+      <h3>Volunteer's working with us</h3>
+      <p>5000 volunteers</p>
+    </div>
+    <div class="card">
+      <h3>Food donated till now</h3>
+      <p>3000 packets</p>
+      <h3>Estimated Consumers remaining</h3>
+      <p>3000 people</p>
+      <h3>Volunteers on work</h3>
+      <p>3000 volunteers</p>
+      <a href="#" class="button">More Info</a>
+    </div>
+  </div>
+</div>
+
+<!--MODAL-->
+
+<div id="id01" class="modal1">
+  <div class="modal1-dailog">
+  <form class="modal1-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <a onclick="document.getElementById('id02').style.display='block'">
+        <img src="/home/sufyan/Desktop/web_page/modal/volunteer.jpg"  class="avatar1"></a>
+      <a onclick="document.getElementById('id03').style.display='block'">  
+      <img src="/home/sufyan/Desktop/web_page/modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
+      <a onclick="document.getElementById('id04').style.display='block'">
+      <img src="/home/sufyan/Desktop/web_page/modal/ngo.png" alt="Avatar" class="avatar3"></a>
+      <h1 class="mtxt">CHOOSE YOUR LOGIN TYPE</h1>
+    </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+<!-- #modal 2 -->
+<div id="id02" class="modal2">
+  
+  <form class="modal2-content" action="/action_page.php" method="post">
+    <div class="imgcontainer animate">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
+      <img src="/home/sufyan/Desktop/web_page/modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
+    </div>
+
+    <div class="container animate">
+      <label for="uname" ><b>Username</b></label>
+      <p></p>
+      <input class="input1" type="text" placeholder="Enter Username" name="uname" required>
+      <p></p>
+      <label  for="psw"><b>Password</b></label>
+      <p></p>
+      <input class="input1" type="password" placeholder="Enter Password" name="psw" required>
+      <p></p>  
+      <button  type="submit">Login</button>
+      <p></p>
+    </div>
+
+    <div class="container2">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot  <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+<!-- #modal 3 -->
+<div id="id03" class="modal3">
+  
+  <form class="modal3-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer animate">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
+      <img src="/home/sufyan/Desktop/web_page/modal/hotel.jpg"" alt="Avatar" class="avatar4">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <p></p>
+      <input class="input1" type="text" placeholder="Enter Username" name="uname" required>
+      <p></p>
+      <label for="psw"><b>Password</b></label>
+      <p></p>
+      <input class="input1" type="password" placeholder="Enter Password" name="psw" required>
+      <p></p>  
+      <button type="submit">Login</button>
+      <p></p>
+    
+    </div>
+
+    <div class="container2">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot  <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+<!-- #modal 4 -->
+<div id="id04" class="modal4">
+  
+  <form class="modal4-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer animate">
+      <span onclick="document.getElementById('id04').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
+      <img src="/home/sufyan/Desktop/web_page/modal/ngo.png"" alt="Avatar" class="avatar4">
+    </div>
+
+    <div class="container">
+      <label for="uname" ><b>Username</b></label>
+      <p></p>
+      <input class="input1" type="text" placeholder="Enter Username" name="uname" required>
+      <p></p>
+      <label  for="psw"><b>Password</b></label>
+      <p></p>
+      <input class="input1" type="password" placeholder="Enter Password" name="psw" required>
+      <p></p>  
+      <button  type="submit">Login</button>
+      <p></p>
+     
+    </div>
+
+    <div class="container2">
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot  <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<!--MODAL END-->
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
+  }
+  </script>
+
+
+</body>
+</html>
