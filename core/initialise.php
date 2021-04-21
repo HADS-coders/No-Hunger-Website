@@ -10,10 +10,12 @@
         // echo 'INC PATH:'.INC_PATH;
         // echo 'CORE PATH:'.CORE_PATH;
         //load the config files
-        require_once(INC_PATH.DS.'config.php');
+        // require_once(INC_PATH.DS.'config.php');
+        require_once('../includes/config.php');
 
         //core classes
-        require_once(CORE_PATH.DS.'person.php');
+        // require_once(CORE_PATH.DS.'person.php');
+        require_once('person.php');
     }
     catch (Exception $e){
         echo $e->getMessage();
