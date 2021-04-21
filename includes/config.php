@@ -14,12 +14,12 @@
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
     // $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY,true);
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo 'Connected';
+    // echo 'Connected';
     
     $query = 'SELECT * from person';
         
             //prepare statement
-            $stmt = $this->conn->prepare($query);
+            $stmt = $db->prepare($query);
 
             //execute 
             $stmt->execute();
