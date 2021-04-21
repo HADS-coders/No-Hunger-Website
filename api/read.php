@@ -42,7 +42,7 @@ try{
         echo json_encode(array('message' => 'No person found'));
     }
 }
-catch (Exception $e){
+catch (PDOException $e){
     echo $e->getMessage();
 }
 
