@@ -7,6 +7,8 @@ header('Content-Type: application/json');
 //initialising our api
 include_once('../core/initialise.php');
 
+try{
+
 //insantiate person
 $person = new Person($db);
 
@@ -38,6 +40,10 @@ if($num > 0){
     echo json_encode($person_arr);
 }else{
     echo json_encode(array('message' => 'No person found'));
+}
+}
+catch (Exception $e){
+    echo $e;
 }
 
 ?>
