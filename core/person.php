@@ -5,7 +5,7 @@
         private $table = 'person';
 
         //person properties
-        public $pid;
+        public $PID;
         public $fname;
         public $lname;
         public $email;
@@ -39,7 +39,7 @@
             $stmt = $this->conn->prepare($query);
 
             //binding param
-            $stmt->bindParam(1,$this->pid);
+            $stmt->bindParam(1,$this->PID);
 
             //execute 
             $stmt->execute();

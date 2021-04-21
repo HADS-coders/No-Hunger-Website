@@ -17,7 +17,7 @@ $person->read_single();
 
 
 $person_arr = array(
-    'pid' => $person->pid,
+    'pid' => $person->PID,
     'fname' => $person->fname,
     'lname' => $person->lname,
     'email' => $person->email,
