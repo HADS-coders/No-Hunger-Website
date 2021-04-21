@@ -7,7 +7,7 @@
     $db_port = '5432';
 
     try{
-    $db = new PDO('pgsql:host='.$db_host.';port='.$db_port.';dbname='.$db_name.';charset=utf8',$db_user,$db_password);
+    $db = new PDO('pgsql:host='.$db_host.';port='.$db_port.';dbname='.$db_name,$db_user,$db_password);
 
     // set db attributes
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
