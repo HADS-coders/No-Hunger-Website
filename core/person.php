@@ -57,7 +57,7 @@
         }
 
         public function add(){
-            $query = 'INSERT into person SET  fname = :fname, lname = :lname, email = :email, phone = :phone, username = :username, password= :password';
+            $query = 'INSERT into person (fname , lname, email, phone, username, password) values ( :fname, :lname, :email, :phone, :username, :password)';
 
             //prepare stmt
             $stmt = $this->conn->prepare($query);
