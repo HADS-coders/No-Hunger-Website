@@ -20,7 +20,7 @@
         
         //get person from database
         public function read(){
-            $query = 'SELECT * from '.$this->table;
+            $query = 'SELECT (pid,fname,lname,email,phone,username,password) from '.$this->table;
         
             //prepare statement
             $stmt = $this->conn->prepare($query);
@@ -33,13 +33,13 @@
         
         public function read_single(){
 
-            $query = 'SELECT * from person where PID = ?';
+            $query = 'SELECT * from person where pid = ?';
 
             //prepare statement
             $stmt = $this->conn->prepare($query);
 
             //binding param
-            $stmt->bindParam(1,$this->PID);
+            $stmt->bindParam(1,$this->pid);
 
             //execute 
             $stmt->execute();
