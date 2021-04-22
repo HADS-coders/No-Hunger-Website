@@ -24,6 +24,7 @@ try{
         
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
+            print_r($row);
             $person_item = array(
                 'pid' => $row[0],
                 'fname' => $row[1],
