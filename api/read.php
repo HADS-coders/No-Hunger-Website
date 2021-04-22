@@ -26,13 +26,13 @@ try{
             extract($row);
             print_r($row);
             $person_item = array(
-                'pid' => $row[0],
-                'fname' => $row[1],
-                'lname' => $row[2],
-                'email' => $row[3],
-                'phone' => $row[4],
-                'username' => $row[5],
-                'password' => $row[6],
+                'pid' => $PID,
+                'fname' => $fname,
+                'lname' => $lname,
+                'email' => $email,
+                'phone' => $phone,
+                'username' => $username,
+                'password' => $password,
             );
             array_push($person_arr['data'], $person_item);
         }
