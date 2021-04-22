@@ -20,7 +20,7 @@
         
         //get person from database
         public function read(){
-            $query = 'SELECT * from '.$this->table;
+            $query = 'SELECT (pid,fname,lname,email,phone,username,password) from '.$this->table;
         
             //prepare statement
             $stmt = $this->conn->prepare($query);
