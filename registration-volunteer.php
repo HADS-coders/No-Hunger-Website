@@ -417,7 +417,7 @@ img {vertical-align: middle;}
 </div>
 
 <div class="navbar">
-  <a href="home.php"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <a href="index.php"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
