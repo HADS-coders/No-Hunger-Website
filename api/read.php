@@ -24,7 +24,6 @@ try{
         
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
-            print_r($row);
             $person_item = array(
                 'pid' => $PID,
                 'fname' => $fname,
@@ -35,6 +34,8 @@ try{
                 'password' => $password,
             );
             array_push($person_arr['data'], $person_item);
+            print_r('row:  '.$row);
+            print_r('extract row:  '.extract(($row)));
         }
 
         //convert to json
