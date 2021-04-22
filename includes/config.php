@@ -16,17 +16,17 @@
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // echo 'Connected';
     
-    // $query = 'SELECT * from person';
+    $query = 'SELECT (pid,fname,lname,email,phone,username,password) from person';
         
-    //         //prepare statement
-    //         $stmt = $db->prepare($query);
+            //prepare statement
+            $stmt = $db->prepare($query);
 
-    //         //execute 
-    //         $stmt->execute();
+            //execute 
+            $stmt->execute();
 
-    //         $details = $stmt->fetch();
+            $details = $stmt->fetch();
 
-    //         print_r($details);
+            print_r($details);
     }
     catch (PDOException $e){
         echo 'Connection failed: '.$e->getMessage();
