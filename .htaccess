@@ -8,14 +8,16 @@
   
 # From http:// to https://
   
-  RewriteCond %{ENV:HTTPS} !=on
-  RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+#  RewriteCond %{ENV:HTTPS} !=on
+#  RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
   
 # Redirect /file.php to /file with POST (enabled)
 
-  RewriteCond %{REQUEST_METHOD} !POST     
+#  RewriteCond %{REQUEST_METHOD} !POST     
   RewriteCond %{THE_REQUEST} \s/([^.]+)\.php [NC]
   RewriteRule ^ /%1 [NE,L,R]
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.*)/?$ /$1.php  [L]
 
 # Add trailing slash to url
 
