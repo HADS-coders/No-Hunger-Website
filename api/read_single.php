@@ -10,14 +10,14 @@ include_once('../core/initialise.php');
 //insantiate person
 $person = new Person($db);
 
-$person->PID = isset($_GET['pid']) ? $_GET['pid'] : die();
+$person->pid = isset($_GET['pid']) ? $_GET['pid'] : die();
 
 //get person
 $person->read_single();
 
 
 $person_arr = array(
-    'pid' => $person->PID,
+    'pid' => $person->pid,
     'fname' => $person->fname,
     'lname' => $person->lname,
     'email' => $person->email,
