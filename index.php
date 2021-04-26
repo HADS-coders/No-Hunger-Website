@@ -149,7 +149,7 @@ error_reporting(0)
       overflow: hidden;
     }
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:800px) {
 
       .navbar a{
         font-size: 20px;
@@ -194,30 +194,35 @@ error_reporting(0)
       display: block;
     }
 
-    /* THIS MAKES TWO UNEQUAL COLUMNS BESIDES EACH OTHER*/
+    /* For Row */
+
+    .row{
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      column-gap: 20px;
+      padding: 20px;
+    }
+
     /* TO MAKE LEFT COLUMN */
     .leftcolumn {
-      float: left;
-      width: 75%;
+      display: block;
     }
 
     /* TO MAKE RIGHT COLUMN */
     .rightcolumn {
-      float: left;
-      width: 25%;
       background-color: inherit;
-      padding-left: 20px;
     }
 
 
     /* ADDING CARD TO THE PAGE */
     .card1{
+      display: block;
       background-color:inherit;
-      padding: 20px;
       margin-top: 20px;
-      height:80%;
-      width: 50%;
+      height:41vw;
+      width: 75vw;
     }
+
     .card {
       border-radius: 5%;
       background-color: white;
@@ -226,31 +231,41 @@ error_reporting(0)
       margin-top: 20px;
       color: black;
     }
+
     .cimage
     {
       border: 3px solid black;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 350px;
-      height:350px;
-      
+      width: 30%;
     }
+
     .cimage2
     {
       border: 3px solid black;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 320px;
-      height:350px;
-      
+      width: 100%;      
     }
 
     .row:after {
       content: "";
       display: table;
       clear: both;
+    }
+
+    @media screen and (max-width:800px){
+
+      .row{
+        grid-template-columns: 100%;
+      }
+
+      .card1{
+        width: 100%;
+        height: 41vw;
+      }
     }
 
     /* FOOTER STYLE */
@@ -289,16 +304,19 @@ error_reporting(0)
 
     .cf3 {
       position:relative;
-      height:281px;
-      width:450px;
-      margin:0 auto;
+      height:100%;
+      width:100%;
+      text-align: center;
+      justify-content: center;      
     }
 
     .cf3 img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      width: 90%;
       border-radius: 5%;
       position:absolute;
-      left:-17%;
-      top: 1%;
       -webkit-transition: opacity 1s ease-in-out;
       -moz-transition: opacity 1s ease-in-out;
       -o-transition: opacity 1s ease-in-out;
@@ -321,7 +339,8 @@ error_reporting(0)
     }
 
     .cf3 img.top {
-      float: left;
+      width: 95%;
+      left: 2.5%;
       animation-name: cf3FadeInOut;
       animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
@@ -329,7 +348,9 @@ error_reporting(0)
       animation-direction: alternate;
     }
 
-
+    .cf3 img.bottom{
+      left:5%;
+    }
 
     .button{
       color:black;
@@ -711,8 +732,8 @@ error_reporting(0)
   <div class="leftcolumn">
     <div class="card1">
       <div class="cf3">
-        <image class="bottom" src="home/pic2.jpg" width=1150 height=550></image>
-        <image class="top" src="home/pic1.jpg" width=1150 height=550></image>
+        <image class="bottom" src="home/pic2.jpg" ></image>
+        <image class="top" src="home/pic1.jpg" ></image>
       </div>
     </div>
     <div class="card">
