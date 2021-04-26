@@ -23,40 +23,82 @@ error_reporting(0)
     /* Header/Blog Title */
     .header {
       color: black;
-      padding: 30px 0px;
-      padding-block-end: 30px;
-      padding-bottom: 40px;
+      padding-top: 30px;
       background:inherit;
-      block-size: 250px;
     }
 
-    .header .h1
-    {
-      font-size: 45px;
-      position: absolute;
-      left: 500px;
-      top: 50px;
-    }
-    .header  .img
-    {
-      position:absolute;
-      top:40px;
-      left:320px;
-    }
-    .header .h2
-    {
-      font-size: 35px;
-      position: absolute;
-      left: 510px;
-      top: 100px;
-    }
     .header .marquee
     {
       font-size: 19px;
-      position: absolute;
-      top: 190px;
     }
 
+    .up-section{
+      display: flex;
+    }
+
+    .up-section .logo{
+      padding-right: 20px;
+      padding-left: 20%;
+    }
+
+    .title{
+      font-size: 45px;
+      margin: 20px 0;
+    }
+
+    .subtitle{
+      font-size: 35px;
+      margin: 0;
+    }
+
+    @media screen and (max-width:1000px) {
+
+      .logo img{
+        width: 100px;
+        height: 100px;
+      }
+
+      .up-section .logo{
+        padding-left:15%;
+      }
+
+      .title{
+      font-size: 30px;
+      }
+
+      .subtitle{
+        font-size: 20px;
+        margin: 0;
+      }
+
+    }
+
+    @media screen and (max-width:400px) {
+
+      .logo img{
+        width: 75px;
+        height: 75px;
+      }
+
+      .up-section .logo{
+        padding-left:15%;
+      }
+
+      .title{
+      font-size: 20px;
+      margin: 10px 0;
+      }
+
+      .subtitle{
+        font-size: 15px;
+      }
+
+      .marquee h3{
+        font-size: 15px;
+        margin: 10px 0;
+      }
+
+    }
 
 
     /* Style the top navigation bar */
@@ -618,9 +660,15 @@ error_reporting(0)
 <body>
 
 <div class="header">
-  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
-  <h2 class="h2">the motive line</h2>
+  <div class="up-section">
+    <div class="logo">
+      <img src="home/logo.jpg"  width="150px" height="150px" >
+    </div>
+    <div class="title-section">
+      <h1 class="title">THE NO HUNGER WEBSITE</h1>
+      <h2 class="subtitle">the motive line</h2>
+    </div>
+  </div>
   <marquee class="marquee"><h3>Welcome to The No Hunger Website!</h3></marquee>
 </div>
 
