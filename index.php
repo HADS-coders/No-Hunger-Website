@@ -695,7 +695,7 @@ error_reporting(0)
 <div class="header">
   <div class="up-section">
     <div class="logo">
-      <img src="home/logo.jpg"  width="150px" height="150px" >
+      <img src="images/home/logo.jpg"  width="150px" height="150px" >
     </div>
     <div class="title-section">
       <h1 class="title">THE NO HUNGER WEBSITE</h1>
@@ -706,7 +706,7 @@ error_reporting(0)
 </div>
 
 <div class="navbar">
-  <a href="home.html"><image src="home/home.jpg" class="navimage" ></image></a>
+  <a href="home.html"><image src="images/home/home.jpg" class="navimage" ></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
@@ -717,14 +717,14 @@ error_reporting(0)
   <div class="dropdown">
     <button class="dropbutton">Registration</button>
     <div class="dropdown-content">
-      <a href="registration-volunteer.php">Volunteer</a>
+      <a href="registration-volunteer">Volunteer</a>
       <a href="registration-ngo.php">NGO</a>
       <a href="registration-hotel.php">Hotel</a>
     </div>
   </div>   
   <a href="#">Provide Info</a>
   <div class="navbar-right"> 
-    <a onclick="document.getElementById('id01').style.display='block'"><image src="home/avatar.jpg" class="navimage"></a>
+    <a onclick="document.getElementById('id01').style.display='block'"><image src="images/home/avatar.jpg" class="navimage"></a>
   </div>
 </div>
 
@@ -732,14 +732,14 @@ error_reporting(0)
   <div class="leftcolumn">
     <div class="card1">
       <div class="cf3">
-        <image class="bottom" src="home/pic2.jpg" ></image>
-        <image class="top" src="home/pic1.jpg" ></image>
+        <image class="bottom" src="images/home/pic2.jpg" ></image>
+        <image class="top" src="images/home/pic1.jpg" ></image>
       </div>
     </div>
     <div class="card">
       <h2 align= center>THE NO HUNGER PROJECT</h2>
       <h3 align=right >Start Date, Jan 11, 2021</h3>
-      <img src="home/logo.jpg" class="cimage"></img>
+      <img src="images/home/logo.jpg" class="cimage"></img>
       <p><h3>The aim behind this project is :</h3></p>
       
       <h4>1.To reduce the food wasted in our country.</h4>
@@ -750,7 +750,7 @@ error_reporting(0)
   <div class="rightcolumn">
     <div class="card">
       <h2>Team</h2>
-      <image src="home/ourlogo.png" class="cimage2"></image>
+      <image src="images/home/ourlogo.png" class="cimage2"></image>
       <p>This project was started by the group of HADS coders.</p>
     </div>
     <div class="card">
@@ -775,25 +775,25 @@ error_reporting(0)
   <h2 clhass="footer-title">OUR TEAM</h2>
   <div class="footer-grid">
     <div class="member-box">
-      <image class="img" src="footer/coder1.jpeg"></image>
+      <image class="img" src="images/footer/coder1.jpeg"></image>
       <p>
         <h class="txt">SUFYAN DAWNAK</h>
       </p>
     </div>
     <div class="member-box">
-      <image class="img" src="footer/coder2.jpeg"></image>
+      <image class="img" src="images/footer/coder2.jpeg"></image>
       <p>
         <h class="txt">DANIYAL DOLARE</h>
       </p>
     </div>
     <div class="member-box">
-      <image class="img" src="footer/coder3.jpeg"></image>
+      <image class="img" src="images/footer/coder3.jpeg"></image>
       <p>
         <h class="txt">HAARISH KHAN</h>
       </p>
     </div>
     <div class="member-box">
-      <image class="img" src="footer/coder4.jpeg"></image>
+      <image class="img" src="images/footer/coder4.jpeg"></image>
       <p>
         <h class="txt">AZAD ANSARI</h>
       </p>
@@ -809,11 +809,11 @@ error_reporting(0)
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <a onclick="document.getElementById('id02').style.display='block'">
-        <img src="modal/volunteer.jpg"  class="avatar1"></a>
+        <img src="images/modal/volunteer.jpg"  class="avatar1"></a>
       <a onclick="document.getElementById('id03').style.display='block'">  
-      <img src="modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
+      <img src="images/modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
       <a onclick="document.getElementById('id04').style.display='block'">
-      <img src="modal/ngo.png" alt="Avatar" class="avatar3"></a>
+      <img src="images/modal/ngo.png" alt="Avatar" class="avatar3"></a>
       <h1 class="mtxt">CHOOSE YOUR LOGIN TYPE</h1>
     </div>
     </div>
@@ -827,7 +827,7 @@ error_reporting(0)
   <form class="modal2-content" action="login.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id02').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
+      <img src="images/modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
 </div>
     <div class="container animate">
      
@@ -845,7 +845,7 @@ error_reporting(0)
   <form class="modal3-content animate" action="hotellogin.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id03').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="modal/hotel.jpg"" alt="Avatar" class="avatar4">
+      <img src="images/modal/hotel.jpg"" alt="Avatar" class="avatar4">
     </div>
     <div class="container">
     <input type="submit" class="text"  name="su" value="click to login" >
@@ -863,7 +863,7 @@ error_reporting(0)
   <form class="modal4-content animate" action="ngologin.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id04').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="modal/ngo.png"" alt="Avatar" class="avatar4">
+      <img src="images/modal/ngo.png"" alt="Avatar" class="avatar4">
     </div>
 
     <div class="container">
