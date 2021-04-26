@@ -14,6 +14,7 @@ error_reporting(0)
     /*TO STYLE THE BODY*/
     body {
       font-family: Arial;
+      margin: 0;
       background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
       background-attachment: fixed;
       background-repeat: no-repeat;
