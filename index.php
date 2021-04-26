@@ -149,6 +149,18 @@ error_reporting(0)
       overflow: hidden;
     }
 
+    @media screen and (max-width:600px) {
+
+      .navbar a{
+        font-size: 20px;
+      }
+
+      .dropdown .dropbutton{
+        font-size: 20px;
+      }
+
+    }
+
 
     /* Change color on hover */
     .navbar a:hover ,.dropdown:hover .dropbutton{
