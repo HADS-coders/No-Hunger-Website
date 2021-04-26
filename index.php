@@ -206,87 +206,30 @@ error_reporting(0)
       text-align: center;
       color: black;
       margin-top: 20px;
-      block-size: 450px;
     }
 
-    .fimage1
-    {
+    .footer-title{
+      padding: 20px;
+    }
+
+    .footer-grid{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .member-box{
+      text-align: center;
+    }
+
+    .member-box img{
+      max-width: 200px;
+      width: 70%;
       border-radius:50%;
-        width: 200px;
-        height: 200px;
-        position:absolute;
-        left:150px;
-        top: 1700px;
     }
 
-    .fimage2
-    {
-      border-radius:50%;
-        width: 200px;
-        height: 200px;
-        position:absolute;
-        left:500px;
-        top: 1700px;
-    }
-
-    .fimage3
-    {
-      border-radius:50%;
-        width: 200px;
-        height: 200px;
-        position:absolute;
-        left:850px;
-        top: 1700px;
-    }
-
-    .fimage4
-    {
-      border-radius:50%;
-        width: 200px;
-        height: 200px;
-        position:absolute;
-        left:1200px;
-        top: 1700px;
-    }
-
-    .txt1
-    {
-        font-size: 24;
-        position: absolute;
-        color: black;
-        left:150px;
-        top: 1930px;
-    }
-
-    .txt2
-    {
-        font-size: 24;
-        position: absolute;
-        color:black;
-        left:500px;
-        top: 1930px;
-
-    }
-
-    .txt3
-    {
-        font-size: 24;
-        position: absolute;
-        color: black;
-        left:870px;
-        top: 1930px;
-        
-    }
-
-
-    .txt4
-    {
-        font-size: 24;
-        position: absolute;
-        color: black;
-        left:1220px;
-        top: 1930px;
-
+    .member-box .txt{
+      font-size: 24;
+      font-weight: bold;
     }
 
 
@@ -748,15 +691,33 @@ error_reporting(0)
 </div>
 
 <div class="footer">
-  <h2 clhass="">OUR TEAM</h2>
-  <image class="fimage1" src="footer/coder1.jpeg"></image>
-  <h class="txt1">SUFYAN DAWNAK</h>
-  <image class="fimage2" src="footer/coder2.jpeg"></image>
-  <h class="txt2">DANIYAL DOLARE</h>
-  <image class="fimage3" src="footer/coder3.jpeg"></image>
-  <h class="txt3">HAARISH KHAN</h>
-  <image class="fimage4" src="footer/coder4.jpeg"></image>
-  <h class="txt4">AZAD ANSARI</h>
+  <h2 clhass="footer-title">OUR TEAM</h2>
+  <div class="footer-grid">
+    <div class="member-box">
+      <image class="img" src="footer/coder1.jpeg"></image>
+      <p>
+        <h class="txt">SUFYAN DAWNAK</h>
+      </p>
+    </div>
+    <div class="member-box">
+      <image class="img" src="footer/coder2.jpeg"></image>
+      <p>
+        <h class="txt">DANIYAL DOLARE</h>
+      </p>
+    </div>
+    <div class="member-box">
+      <image class="img" src="footer/coder3.jpeg"></image>
+      <p>
+        <h class="txt">HAARISH KHAN</h>
+      </p>
+    </div>
+    <div class="member-box">
+      <image class="img" src="footer/coder4.jpeg"></image>
+      <p>
+        <h class="txt">AZAD ANSARI</h>
+      </p>
+    </div>
+  </div>
 </div>
 
 <!--MODAL-->
