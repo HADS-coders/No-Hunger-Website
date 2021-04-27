@@ -522,15 +522,22 @@ $conpwd=$_GET['confirm_password'];
 // $data=mysqli_query($conn,$query);
 
 $query="select * from hotel";
-$stmt = $conn->prepare($query);
-$stmt->execute();
-$data=$stmt->fetch();
-if($data)
-{
-echo "Data inserted into Database\n".$data;
+$result = mysqli_query($conn,$query);
+while($row=$result->fetch_assoc()){
+  echo $row['user_name'];
+  echo $row['email'];
+  echo $row['user_name'];
+  echo $row['password'];
+  echo "\n\n";
 }
-else
-{
-echo "Failed to insert Data inserted into Database";
-}
+
+
+// if($data)
+// {
+// echo "Data inserted into Database\n".$data;
+// }
+// else
+// {
+// echo "Failed to insert Data inserted into Database";
+// }
 ?>
