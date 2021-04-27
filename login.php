@@ -17,7 +17,7 @@ img.avatar4 {
 
 </style>
 <div class="imgcontainer animate">
- <img src="modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
+ <img src="images/modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
 <form action="" method="POST"  >
  <label><b> Email</b></label><br><br>
  <input type="text" name="email"><br><br>
