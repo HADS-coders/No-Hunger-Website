@@ -441,19 +441,19 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <img src="ngo/ngo.jpeg" class="simage">
+          <img src="images/ngo/ngo.jpeg" class="simage">
           <h2 class="text">NGO's are a big part of our team </h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="ngo/ngo2.png" class="simage">
+          <img src="images/ngo/ngo2.png" class="simage">
           <h2 class="text">You can help us by providing charity</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="ngo/ngo3.jpeg" class="simage">
+          <img src="images/ngo/ngo3.jpeg" class="simage">
           <h2 class="text">You can also provide us volunteer,s that are willing to work with us</h2>
         </div>
         

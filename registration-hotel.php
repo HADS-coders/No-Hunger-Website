@@ -446,25 +446,25 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 4</div>
-          <img src="hotel/hotel1.jpg" class="simage">
+          <img src="images/hotel/hotel1.jpg" class="simage">
           <h2 class="text">Hotel plays a main role in our system</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 4</div>
-          <img src="hotel/hotel2.jpg" class="simage">
+          <img src="images/hotel/hotel2.jpg" class="simage">
           <h2 class="text">Instead of throwing the excess food in hotels</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 4</div>
-          <img src="hotel/hotel3.jpg" class="simage">
+          <img src="images/hotel/hotel3.jpg" class="simage">
           <h2 class="text">You can hand over it to our volunteers packed/unpacked</h2>
         </div>
         
         <div class="mySlides fade">
             <div class="numbertext">4 / 4</div>
-            <img src="hotel/hotel4.jpg" class="simage">
+            <img src="images/hotel/hotel4.jpg" class="simage">
             <h2 class="text">Also you can be a part of our team and directly deliver the food</h2>
           </div>
         

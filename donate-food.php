@@ -223,14 +223,14 @@
 <body>
     <div class="header">
         <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-        <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+        <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
         <h2 class="h2">the motive line</h2>
         <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
           block on the right.</h3></marquee>
     </div>
       
       <div class="navbar">
-        <a href="index.php"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+        <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
         <div class="dropdown">
           <button class="dropbutton">Donation</button>
           <div class="dropdown-content">
@@ -254,7 +254,7 @@
           <div class="card">
             <h1>RAW FOOD ITEMS</h1>
           <div class="imagecontainer">
-          <a href="donate-raw-food.php"><img class="pic1" src="donate-food/rawfood.jpg" border="3px"></img></a>
+          <a href="donate-raw-food.php"><img class="pic1" src="images/donate-food/rawfood.jpg" border="3px"></img></a>
          </div>
           <p class="p1">
             You can donate raw food items like Rice, Wheat etc.<br>
@@ -266,7 +266,7 @@
           <div class="card">
             <h1>COOKED FOOD ITEMS</h1>
             <div class="imagecontainer">
-             <a href="donate-cooked-food.php"><img class="pic1" src="donate-food/cookedfood.jpg" border="3px"></img></a>
+             <a href="donate-cooked-food.php"><img class="pic1" src="images/donate-food/cookedfood.jpg" border="3px"></img></a>
              </div>
              <p class="p2">
               You can donate Cooked food items like cooked Rice , Chapati etc. <br>

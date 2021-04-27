@@ -512,14 +512,14 @@ img {vertical-align: middle;}
 
 <div class="header">
   <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
   <h2 class="h2">the motive line</h2>
   <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
     block on the right.</h3></marquee>
 </div>
 
 <div class="navbar">
-  <a href="index.php"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
@@ -595,7 +595,7 @@ img {vertical-align: middle;}
         
         <div class="mySlides fade"> 
           <div class="numbertext">STEPS TO ADD FOOD ITEMS</div>
-          <img src="donate-cooked-food/pic1.png" class="simage">
+          <img src="images/donate-cooked-food/pic1.png" class="simage">
           <h2 class="text">PROCEDURE TO ADD FOOD ITEMS TO THE LIST 
             (STEPS)
           </h2>
@@ -603,48 +603,48 @@ img {vertical-align: middle;}
         
         <div class="mySlides fade">
           <div class="numbertext">1 / 7</div>
-          <img src="donate-cooked-food/pic2.png" class="simage">
+          <img src="images/donate-cooked-food/pic2.png" class="simage">
           <h2 class="text">Add the number of persons the food is sufficient for (minimum 5 persons) and add the food item name</h2>
         </div>
         
         <div class="mySlides fade"> 
           <div class="numbertext">2 / 7</div>
-          <img src="donate-cooked-food/pic3.png" class="simage">
+          <img src="images/donate-cooked-food/pic3.png" class="simage">
           <h2 class="text">Click on "Add to List" button to add the entered food item to the list or press "ENTER" .
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">3 / 7</div>
-          <img src="donate-cooked-food/pic4.png" class="simage">
+          <img src="images/donate-cooked-food/pic4.png" class="simage">
           <h2 class="text">Now you can see the added item into the list. Add the items to the list as much as you want.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">4 / 7</div>
-          <img src="donate-cooked-food/pic5.png" class="simage">
+          <img src="images/donate-cooked-food/pic5.png" class="simage">
           <h2 class="text">To Delete an item from the list select that item or you can also select multiple items.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">5 / 7</div>
-          <img src="donate-cooked-food/pic6.png" class="simage">
+          <img src="images/donate-cooked-food/pic6.png" class="simage">
           <h2 class="text">Click on "Remove from List" button to remone the selected items from the list. 
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">6 / 7</div>
-          <img src="donate-cooked-food/pic7.png" class="simage">
+          <img src="images/donate-cooked-food/pic7.png" class="simage">
           <h2 class="text">If you need food packets to pack food click on the shown checkbox 
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">7 / 7</div>
-          <img src="donate-cooked-food/pic8.png" class="simage">
+          <img src="images/donate-cooked-food/pic8.png" class="simage">
           <h2 class="text">A text field will appear in which you can enter the nymwber of packets you required.
             (NOTE: One packet consist of 2 silver containers , 1 plastic container)
           </h2>

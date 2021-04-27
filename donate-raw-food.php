@@ -577,14 +577,14 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">STEPS TO ADD FOOD ITEMS</div>
-          <img src="donate-raw-food/Screenshot 1.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 1.png" class="simage">
           <h2 class="text">PROCEDURE TO ADD FOOD ITEMS TO THE LIST 
             (STEPS)</h2>
         </div>
         
         <div class="mySlides fade"> 
           <div class="numbertext">1 / 6</div>
-          <img src="donate-raw-food/Screenshot 2.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 2.png" class="simage">
           <h2 class="text">Add the food item name along with the quantity (Example:weight in kg you wish to donate in the field provided 
             below the label Food Items.
           </h2>
@@ -592,34 +592,34 @@ img {vertical-align: middle;}
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 6</div>
-          <img src="donate-raw-food/note.png" class="simage">
+          <img src="images/donate-raw-food/note.png" class="simage">
           <h2 class="text">NOTE : Only single item name along with weight at a time.</h2>
         </div>
         
         <div class="mySlides fade"> 
           <div class="numbertext">3 / 6</div>
-          <img src="donate-raw-food/Screenshot 3.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 3.png" class="simage">
           <h2 class="text">Click on "Add to List" button to add the entered food item to the list or press "ENTER" .
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">4 / 6</div>
-          <img src="donate-raw-food/Screenshot 4.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 4.png" class="simage">
           <h2 class="text">Now you can see the added item into the list. Add the items to the list as much as you want.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">5 / 6</div>
-          <img src="donate-raw-food/Screenshot 5.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 5.png" class="simage">
           <h2 class="text">To Delete an item from the list select that item or you can also select multiple items.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">6 / 6</div>
-          <img src="donate-raw-food/Screenshot 6.png" class="simage">
+          <img src="images/donate-raw-food/Screenshot 6.png" class="simage">
           <h2 class="text">Click on "Remove from List" button to remone the selected items from the list. 
           </h2>
         </div>

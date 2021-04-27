@@ -494,25 +494,25 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 4</div>
-          <img src="volunteer/volunteer1.jpg" class="simage">
+          <img src="images/volunteer/volunteer1.jpg" class="simage">
           <h2 class="text">Volunteer's are the root elements of our team.</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 4</div>
-          <img src="volunteer/volunteer2.jpg" class="simage">
+          <img src="images/volunteer/volunteer2.jpg" class="simage">
           <h2 class="text">Volunteers has to collect the food from hotels.</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 4</div>
-          <img src="volunteer/volunteer3.jpg" class="simage">
+          <img src="images/volunteer/volunteer3.jpg" class="simage">
           <h2 class="text">Pack the food provided by the hotels.</h2>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">3 / 4</div>
-          <img src="volunteer/volunteer4.jpg" class="simage">
+          <img src="images/volunteer/volunteer4.jpg" class="simage">
           <h2 class="text">Distribute the packets to the needy.</h2>
         </div>
         
