@@ -435,7 +435,7 @@ img {vertical-align: middle;}
      <input type="password" id="pass" name="password" placeholder="Enter password" required>
      <label for="confirm">Confirm password</label>
      <input type="password" id="confirm" name="confirm_password" placeholder="Confirm password" required>
-     <input type="submit" value="Submit">
+     <input type="submit" name="submit" value="Submit">
     </form>
     </div>
   </div>
@@ -511,33 +511,35 @@ img {vertical-align: middle;}
 </html>
 
 <?php
-$hotel=$_GET['hotel_name'];
-$un=$_GET['username'];
-$em=$_GET['email'];
-$cn=$_GET['contact'];
-$pwd=$_GET['password'];
-$conpwd=$_GET['confirm_password'];
+if(isset($_POST['submit']))
+{
+  $hotel=$_GET['hotel_name'];
+  $un=$_GET['username'];
+  $em=$_GET['email'];
+  $cn=$_GET['contact'];
+  $pwd=$_GET['password'];
+  $conpwd=$_GET['confirm_password'];
 
-// $query="INSERT INTO HOTEL VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
-// $data=mysqli_query($conn,$query);
+  $query="INSERT INTO HOTEL VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
+  $data=mysqli_query($conn,$query);
 
-$query="select * from hotel";
-$result = mysqli_query($conn,$query);
-while($row=$result->fetch_assoc()){
-  echo $row['user_name'];
-  echo $row['email'];
-  echo $row['user_name'];
-  echo $row['password'];
-  echo "\n\n";
+  // $query="select * from hotel";
+  // $result = mysqli_query($conn,$query);
+  // while($row=$result->fetch_assoc()){
+  //   echo $row['user_name'];
+  //   echo $row['email'];
+  //   echo $row['user_name'];
+  //   echo $row['password'];
+  //   echo "\n\n";
+  // }
+
+  if($data)
+  {
+  echo "Data inserted into Database\n".$data;
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database";
+  }
 }
-
-
-// if($data)
-// {
-// echo "Data inserted into Database\n".$data;
-// }
-// else
-// {
-// echo "Failed to insert Data inserted into Database";
-// }
 ?>
