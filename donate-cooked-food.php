@@ -502,7 +502,7 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">COOKED FOOD DONATION</h1>
-    <form>
+    <form method="post">
     <label for="fname"> Donator's Name</label>
      <input type="text" id="fname" name="d_name" placeholder="Enter Hotel's Name" required>
 
@@ -544,7 +544,7 @@ img {vertical-align: middle;}
     <input type="checkbox">I Agree to all the terms & conditions & hereby confirm that all the information provided by me is correct .
     <span class="checkmark"></span>
     </label>
-    <input type="submit" value="Submit"> 
+    <input type="submit" name="submit" value="Submit"> 
     </form>
     </div>
   </div>
@@ -708,24 +708,28 @@ function display(){
 </html>
 
 <?php
-$name=$_GET['d_name'];
-$em=$_GET['email'];
-$cn=$_GET['c_name'];
-$ct=$_GET['city'];
-$add=$_GET['address'];
-$feed=$_GET['feed'];
-$li=$_GET['items'];
-$pac=$_GET['no_packets'];
 
-$query="INSERT INTO COOKED VALUES ('$name','$em','$cn','$ct','$add','$feed', '$li','$pac')";
-$data=mysqli_query($conn,$query);
+if(isset($_POST['submit']))
+{
+  $name=$_POST['d_name'];
+  $em=$_POST['email'];
+  $cn=$_POST['c_name'];
+  $ct=$_POST['city'];
+  $add=$_POST['address'];
+  $feed=$_POST['feed'];
+  $li=$_POST['items'];
+  $pac=$_POST['no_packets'];
 
-if($data)
-{
-echo "Data inserted into Database";
-}
-else
-{
-echo "Failed to insert Data inserted into Database";
+  $query="INSERT INTO cooked VALUES ('$name','$em','$cn','$ct','$add','$feed', '$li','$pac')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database";
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database ".mysqli_error($conn);
+  }
 }
 ?>

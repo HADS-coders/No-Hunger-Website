@@ -473,12 +473,12 @@ img {vertical-align: middle;}
 <?php
 if(isset($_POST['submit']))
 {
-  $hotel=$_GET['hotel_name'];
-  $un=$_GET['username'];
-  $em=$_GET['email'];
-  $cn=$_GET['contact'];
-  $pwd=$_GET['password'];
-  $conpwd=$_GET['confirm_password'];
+  $hotel=$_POST['hotel_name'];
+  $un=$_POST['username'];
+  $em=$_POST['email'];
+  $cn=$_POST['contact'];
+  $pwd=$_POST['password'];
+  $conpwd=$_POST['confirm_password'];
 
 
   $query="INSERT INTO hotel VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
@@ -492,15 +492,4 @@ if(isset($_POST['submit']))
     echo "Data not inserted".mysqli_error($conn);
   }
 }
-// else
-// {
-//   $query="select * from hotel";
-//   $result = mysqli_query($conn,$query);
-//   while($row=$result->fetch_assoc()){
-//     echo $row['user_name'];
-//     echo $row['email'];
-//     echo $row['user_name'];
-//     echo $row['password']."\n\n";
-//   }
-// }
 ?>

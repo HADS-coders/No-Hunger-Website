@@ -401,7 +401,7 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">VOLUNTEER'S REGISTRATION</h1>
-    <form>
+    <form method="post">
     <label for="fname" >Name</label>
      <input type="text" id="fname" name="name" placeholder="Enter Full Name" required>
      <label for="uname" >User Name</label>
@@ -444,7 +444,7 @@ img {vertical-align: middle;}
       <option value="Saturday">Saturday</option>
      </select>
       <p></p>
-     <input type="submit" value="Submit">
+     <input type="submit" name="submit" value="Submit">
     </form>
     </div>
   </div>
@@ -519,25 +519,28 @@ img {vertical-align: middle;}
 </html>
 
 <?php
-$name=$_GET['Name'];
-$un=$_GET['user_name'];
-$em=$_GET['email'];
-$cn=$_GET['mobile_number'];
-$pwd=$_GET['password'];
-$conpwd=$_GET['confirm_password'];
-$gender=$_GET['gender'];
-$from=$_GET['from'];
-$till=$_GET['till'];
-
-$query="INSERT INTO VOL VALUES ('$name','$un','$em','$cn','$pwd','$conpwd', '$gender', '$from','$till')";
-$data=mysqli_query($conn,$query);
-
-if($data)
+if(isset($_POST['submit']))
 {
-echo "Data inserted into Database";
-}
-else
-{
-echo "Failed to insert Data inserted into Database";
+  $name=$_POST['Name'];
+  $un=$_POST['user_name'];
+  $em=$_POST['email'];
+  $cn=$_POST['mobile_number'];
+  $pwd=$_POST['password'];
+  $conpwd=$_POST['confirm_password'];
+  $gender=$_POST['gender'];
+  $from=$_POST['from'];
+  $till=$_POST['till'];
+
+  $query="INSERT INTO vol VALUES ('$name','$un','$em','$cn','$pwd','$conpwd', '$gender', '$from','$till')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database";
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database ".mysqli_error($conn);
+  }
 }
 ?>

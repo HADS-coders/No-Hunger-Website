@@ -499,7 +499,7 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">RAW FOOD DONATION</h1>
-    <form>
+    <form method="post">
     <label for="fname"> Donator's Name</label>
      <input type="text" id="fname" name="donators_name" placeholder="Enter Hotel's Name" required>
      <label for="email">Email</label>
@@ -526,7 +526,7 @@ img {vertical-align: middle;}
     <input type="checkbox">I Agree to all the terms & conditions & hereby confirm that all the information provided by me is correct .
     <span class="checkmark"></span>
     </label>
-    <input type="submit" value="Submit"> 
+    <input type="submit" name="submit" value="Submit"> 
     </form>
     </div>
   </div>
@@ -670,22 +670,25 @@ img {vertical-align: middle;}
 </html>
 
 <?php
-$name=$_GET['donators_name'];
-$em=$_GET['email'];
-$cn=$_GET['contact'];
-$ct=$_GET['city'];
-$add=$_GET['address'];
-$li=$_GET['list'];
-
-$query="INSERT INTO RAW VALUES ('$name','$em','$cn','$ct','$add','$li')";
-$data=mysqli_query($conn,$query);
-
-if($data)
+if(isset($_POST['submit']))
 {
-echo "Data inserted into Database";
-}
-else
-{
-echo "Failed to insert Data inserted into Database";
+  $name=$_POST['donators_name'];
+  $em=$_POST['email'];
+  $cn=$_POST['contact'];
+  $ct=$_POST['city'];
+  $add=$_POST['address'];
+  $li=$_POST['list'];
+
+  $query="INSERT INTO raw VALUES ('$name','$em','$cn','$ct','$add','$li')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database";
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database ".mysqli_error($conn);
+  }
 }
 ?>

@@ -379,7 +379,7 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">NGO'S REGISTRATION</h1>
-    <form>
+    <form method="post">
     <label for="fname"> NGO Name</label>
      <input type="text" id="fname"  name="ngo_name" placeholder="Enter NGO'S Name" required>
      <label for="uname">User Name</label>
@@ -460,22 +460,26 @@ img {vertical-align: middle;}
 </html>
 
 <?php
-$ngo=$_GET['ngo_name'];
-$un=$_GET['username'];
-$em=$_GET['email'];
-$cn=$_GET['contact'];
-$pwd=$_GET['password'];
-$conpwd=$_GET['confirm_password'];
 
-$query="INSERT INTO NGO VALUES ('$ngo','$un','$em','$cn','$pwd','$conpwd')";
-$data=mysqli_query($conn,$query);
+if(isset($_POST['submit']))
+{
+  $ngo=$_POST['ngo_name'];
+  $un=$_POST['username'];
+  $em=$_POST['email'];
+  $cn=$_POST['contact'];
+  $pwd=$_POST['password'];
+  $conpwd=$_POST['confirm_password'];
 
-if($data)
-{
-echo "Data inserted into Database";
-}
-else
-{
-echo "Failed to insert Data inserted into Database";
+  $query="INSERT INTO ngo VALUES ('$ngo','$un','$em','$cn','$pwd','$conpwd')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database";
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database ".mysqli_error($conn);
+  }
 }
 ?>
