@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include_once("connection.php");
 error_reporting(0)
 ?>
 
@@ -393,13 +393,13 @@ img {vertical-align: middle;}
 
 <div class="header">
   <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
   <h2 class="h2">the motive line</h2>
   <marquee class="marquee"><h3>Fill the form below to register your hotel . You Can help hundreds of people daily by donating food </h3></marquee>
 </div>
 
 <div class="navbar">
-  <a href="index.php"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
@@ -518,12 +518,16 @@ $cn=$_GET['contact'];
 $pwd=$_GET['password'];
 $conpwd=$_GET['confirm_password'];
 
-$query="INSERT INTO HOTEL VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
-$data=mysqli_query($conn,$query);
+// $query="INSERT INTO HOTEL VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
+// $data=mysqli_query($conn,$query);
 
+$query="select * from hotel";
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$data=$stmt->fetch();
 if($data)
 {
-echo "Data inserted into Database";
+echo "Data inserted into Database\n".$data;
 }
 else
 {
