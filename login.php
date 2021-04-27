@@ -41,12 +41,12 @@ if(isset($_POST['submit']))
   if($total == 1)
   {
   // echo "login OK";
- header('location:home.php');
+ header('Location:index.php');
   }
   else
   {
    // echo "<font color ='red'>login Failed <br> <h3>plz enter correct email and password</h3></font>";
-   header('location:error.php');
+   header('Location:error.php');
   }
 }
 

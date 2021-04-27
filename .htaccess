@@ -1,17 +1,8 @@
-# Apache Rewrite Rules
-# <IfModule mod_rewrite.c>
-#  Options +FollowSymLinks
-  RewriteEngine on
-#  RewriteBase /
-
-# Add trailing slash to url
-#  RewriteCond %{REQUEST_FILENAME} !-f
-#  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
-#  RewriteRule ^(.*)$ $1/ [R=301,L]
+RewriteEngine on
 
 # Remove .php-extension from url
 
-#if requested REQUEST_FILENAME is not same as directory
+# check if requested REQUEST_FILENAME is not same as directory name
   
 RewriteCond %{REQUEST_FILENAME} !-d
 
@@ -22,8 +13,3 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 # Here we actually show the page that has .php extension
 
 RewriteRule ^(.*)$ $1.php [NC,L]
-
-#  RewriteRule ^([^\.]+)/$ $1.php 
-
-# End of Apache Rewrite Rules
-# </IfModule>

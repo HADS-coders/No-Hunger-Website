@@ -5,6 +5,8 @@ error_reporting(0)
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     * {
@@ -13,8 +15,10 @@ error_reporting(0)
 
     /*TO STYLE THE BODY*/
     body {
-      font-family: Arial;
+      width: 100%;
+      height: 100%;
       margin: 0;
+      font-family: Arial;
       background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
       background-attachment: fixed;
       background-repeat: no-repeat;
@@ -23,7 +27,7 @@ error_reporting(0)
     /* Header/Blog Title */
     .header {
       color: black;
-      padding-top: 30px;
+      padding-top: 30px ;
       background:inherit;
     }
 
@@ -63,13 +67,13 @@ error_reporting(0)
       }
 
       .title{
-      font-size: 30px;
+       font-size: 30px;
       }
 
       .subtitle{
         font-size: 20px;
         margin: 0;
-      }
+     }
 
     }
 
@@ -158,7 +162,7 @@ error_reporting(0)
       .dropdown .dropbutton{
         font-size: 20px;
       }
-
+      
     }
 
 
@@ -194,8 +198,6 @@ error_reporting(0)
       display: block;
     }
 
-    /* For Row */
-
     .row{
       display: grid;
       grid-template-columns: 3fr 1fr;
@@ -203,6 +205,20 @@ error_reporting(0)
       padding: 20px;
     }
 
+    @media screen and (max-width:800px){
+      .row{
+        grid-template-columns: 100%;
+      }
+    }
+
+    /* @media screen and (max-width: 480px){
+      .row {
+        grid-template-columns: 100%;
+      }
+    } */
+
+
+    /* THIS MAKES TWO UNEQUAL COLUMNS BESIDES EACH OTHER*/
     /* TO MAKE LEFT COLUMN */
     .leftcolumn {
       display: block;
@@ -219,10 +235,16 @@ error_reporting(0)
       display: block;
       background-color:inherit;
       margin-top: 20px;
-      height:41vw;
       width: 75vw;
+      height: 41vw;
     }
 
+    @media screen and (max-width:800px){
+      .card1{
+        width: 100%;
+        height: 41vw;
+      }
+    }
     .card {
       border-radius: 5%;
       background-color: white;
@@ -239,15 +261,18 @@ error_reporting(0)
       margin-left: auto;
       margin-right: auto;
       width: 30%;
+      /* height:350px; */
+      
     }
-
     .cimage2
     {
       border: 3px solid black;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 100%;      
+      width: 100%;
+      /* height:350px; */
+      
     }
 
     .row:after {
@@ -256,28 +281,16 @@ error_reporting(0)
       clear: both;
     }
 
-    @media screen and (max-width:800px){
-
-      .row{
-        grid-template-columns: 100%;
-      }
-
-      .card1{
-        width: 100%;
-        height: 41vw;
-      }
-    }
-
     /* FOOTER STYLE */
-    .footer {
+    footer {
       background-color: white;
-      padding: 20px;
+      margin-top: 20px;
       text-align: center;
       color: black;
-      margin-top: 20px;
     }
 
     .footer-title{
+      font-size: calc(1em + 1vmin);
       padding: 20px;
     }
 
@@ -297,17 +310,23 @@ error_reporting(0)
     }
 
     .member-box .txt{
-      font-size: 24;
-      font-weight: bold;
+      font-size: calc(0.5rem + 1vmin);
+    }
+
+    @media screen and (max-width: 400px) {
+      .member-box .txt{
+      font-size: 12px;
+    }
+      
     }
 
 
     .cf3 {
       position:relative;
-      height:100%;
-      width:100%;
+      width: 100%;
+      height: 100%;
       text-align: center;
-      justify-content: center;      
+      justify-content: center;
     }
 
     .cf3 img {
@@ -351,6 +370,8 @@ error_reporting(0)
     .cf3 img.bottom{
       left:5%;
     }
+
+
 
     .button{
       color:black;
@@ -688,6 +709,7 @@ error_reporting(0)
     }
     /*MODAL END*/
 
+
     </style>
   </head>
 <body>
@@ -695,7 +717,7 @@ error_reporting(0)
 <div class="header">
   <div class="up-section">
     <div class="logo">
-      <img src="images/home/logo.jpg"  width="150px" height="150px" >
+      <img src="logo.jpg"  width="150px" height="150px" >
     </div>
     <div class="title-section">
       <h1 class="title">THE NO HUNGER WEBSITE</h1>
@@ -706,7 +728,7 @@ error_reporting(0)
 </div>
 
 <div class="navbar">
-  <a href="home.html"><image src="images/home/home.jpg" class="navimage" ></image></a>
+  <a href="home.html"><image src="home.jpg" class="navimage" ></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
@@ -724,7 +746,7 @@ error_reporting(0)
   </div>   
   <a href="#">Provide Info</a>
   <div class="navbar-right"> 
-    <a onclick="document.getElementById('id01').style.display='block'"><image src="images/home/avatar.jpg" class="navimage"></a>
+    <a onclick="document.getElementById('id01').style.display='block'"><image src="avatar.jpg" class="navimage"></a>
   </div>
 </div>
 
@@ -732,14 +754,14 @@ error_reporting(0)
   <div class="leftcolumn">
     <div class="card1">
       <div class="cf3">
-        <image class="bottom" src="images/home/pic2.jpg" ></image>
-        <image class="top" src="images/home/pic1.jpg" ></image>
+        <image class="bottom" src="pic2.jpg" ></image>
+        <image class="top" src="pic1.jpg" ></image>
       </div>
     </div>
     <div class="card">
       <h2 align= center>THE NO HUNGER PROJECT</h2>
       <h3 align=right >Start Date, Jan 11, 2021</h3>
-      <img src="images/home/logo.jpg" class="cimage"></img>
+      <img src="logo.jpg" class="cimage"></img>
       <p><h3>The aim behind this project is :</h3></p>
       
       <h4>1.To reduce the food wasted in our country.</h4>
@@ -750,7 +772,7 @@ error_reporting(0)
   <div class="rightcolumn">
     <div class="card">
       <h2>Team</h2>
-      <image src="images/home/ourlogo.png" class="cimage2"></image>
+      <image src="ourlogo.png" class="cimage2"></image>
       <p>This project was started by the group of HADS coders.</p>
     </div>
     <div class="card">
@@ -771,35 +793,27 @@ error_reporting(0)
   </div>
 </div>
 
-<div class="footer">
-  <h2 clhass="footer-title">OUR TEAM</h2>
+<footer class="footer">
+  <h2 class="footer-title">OUR TEAM</h2>
   <div class="footer-grid">
     <div class="member-box">
-      <image class="img" src="images/footer/coder1.jpeg"></image>
-      <p>
-        <h class="txt">SUFYAN DAWNAK</h>
-      </p>
+      <image class="img" src="coder1.jpeg"></image>
+      <h3 class="txt">SUFYAN DAWNAK</h3>
     </div>
     <div class="member-box">
-      <image class="img" src="images/footer/coder2.jpeg"></image>
-      <p>
-        <h class="txt">DANIYAL DOLARE</h>
-      </p>
+      <image class="img" src="coder2.jpeg"></image>
+      <h3 class="txt">DANIYAL DOLARE</h3>
     </div>
     <div class="member-box">
-      <image class="img" src="images/footer/coder3.jpeg"></image>
-      <p>
-        <h class="txt">HAARISH KHAN</h>
-      </p>
+      <image class="img" src="coder3.jpeg"></image>
+      <h3 class="txt">HAARISH KHAN</h3>
     </div>
     <div class="member-box">
-      <image class="img" src="images/footer/coder4.jpeg"></image>
-      <p>
-        <h class="txt">AZAD ANSARI</h>
-      </p>
+      <image class="img" src="coder4.jpeg"></image>
+      <h3 class="txt">AZAD ANSARI</h3>
     </div>
   </div>
-</div>
+</footer>
 
 <!--MODAL-->
 
@@ -809,11 +823,11 @@ error_reporting(0)
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <a onclick="document.getElementById('id02').style.display='block'">
-        <img src="images/modal/volunteer.jpg"  class="avatar1"></a>
+        <img src="modal/volunteer.jpg"  class="avatar1"></a>
       <a onclick="document.getElementById('id03').style.display='block'">  
-      <img src="images/modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
+      <img src="modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
       <a onclick="document.getElementById('id04').style.display='block'">
-      <img src="images/modal/ngo.png" alt="Avatar" class="avatar3"></a>
+      <img src="modal/ngo.png" alt="Avatar" class="avatar3"></a>
       <h1 class="mtxt">CHOOSE YOUR LOGIN TYPE</h1>
     </div>
     </div>
@@ -827,7 +841,7 @@ error_reporting(0)
   <form class="modal2-content" action="login.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id02').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
+      <img src="modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
 </div>
     <div class="container animate">
      
@@ -845,7 +859,7 @@ error_reporting(0)
   <form class="modal3-content animate" action="hotellogin.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id03').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/hotel.jpg"" alt="Avatar" class="avatar4">
+      <img src="modal/hotel.jpg"" alt="Avatar" class="avatar4">
     </div>
     <div class="container">
     <input type="submit" class="text"  name="su" value="click to login" >
@@ -863,7 +877,7 @@ error_reporting(0)
   <form class="modal4-content animate" action="ngologin.php" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id04').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/ngo.png"" alt="Avatar" class="avatar4">
+      <img src="modal/ngo.png"" alt="Avatar" class="avatar4">
     </div>
 
     <div class="container">
