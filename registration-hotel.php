@@ -13,48 +13,11 @@ error_reporting(0)
 /*TO STYLE THE BODY*/
 body {
   font-family: Arial;
-  padding: 10px;
+  margin: 0;
   background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  padding-block-end: 30px;
-  padding-bottom: 40px;
-  background:inherit;
-  block-size: 250px;
-}
-
-.header .h1
-{
-  font-size: 45px;
-  position: absolute;
-  left: 500px;
-  top: 50px;
-}
-.header  .img
-{
-  position:absolute;
-  top:40px;
-  left:320px;
-}
-.header .h2
-{
-  font-size: 35px;
-  position: absolute;
-  left: 510px;
-  top: 100px;
-}
- .header .marquee
- {
-  font-size: 19px;
-  position: absolute;
-  top: 190px;
- }
-
-
-
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -391,12 +354,9 @@ img {vertical-align: middle;}
 </head>
 <body>
 
-<div class="header">
-  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
-  <h2 class="h2">the motive line</h2>
-  <marquee class="marquee"><h3>Fill the form below to register your hotel . You Can help hundreds of people daily by donating food </h3></marquee>
-</div>
+<?php
+    include_once('header.html');
+    ?>
 
 <div class="navbar">
   <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
@@ -422,7 +382,7 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">HOTEL'S REGISTRATION</h1>
-    <form>
+    <form method="post">
     <label for="fname"> Hotel Name</label>
      <input type="text" id="fname" name="hotel_name" placeholder="Enter Hotel's Name" required>
      <label for="uname">User Name</label>
@@ -520,26 +480,27 @@ if(isset($_POST['submit']))
   $pwd=$_GET['password'];
   $conpwd=$_GET['confirm_password'];
 
-  $query="INSERT INTO HOTEL VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
-  $data=mysqli_query($conn,$query);
 
-  // $query="select * from hotel";
-  // $result = mysqli_query($conn,$query);
-  // while($row=$result->fetch_assoc()){
-  //   echo $row['user_name'];
-  //   echo $row['email'];
-  //   echo $row['user_name'];
-  //   echo $row['password'];
-  //   echo "\n\n";
-  // }
+  $query="INSERT INTO hotel VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
+  $data=mysqli_query($conn,$query);
 
   if($data)
   {
-  echo "Data inserted into Database\n".$data;
+  echo "Data inserted into Database\n";
   }
-  else
-  {
-  echo "Failed to insert Data inserted into Database";
+  else{
+    echo "Data not inserted".mysqli_error($conn);
   }
 }
+// else
+// {
+//   $query="select * from hotel";
+//   $result = mysqli_query($conn,$query);
+//   while($row=$result->fetch_assoc()){
+//     echo $row['user_name'];
+//     echo $row['email'];
+//     echo $row['user_name'];
+//     echo $row['password']."\n\n";
+//   }
+// }
 ?>
