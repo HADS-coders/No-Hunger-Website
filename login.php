@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
   $uname=$_POST['email'];
   $psw=$_POST['password'];
 
-  $query="SELECT * FROM VOL WHERE EMAIL='$uname' && password='$psw' ";
+  $query="SELECT * FROM vol WHERE EMAIL='$uname' && password='$psw' ";
   $data=mysqli_query($conn,$query);
 
   $total=mysqli_num_rows($data);

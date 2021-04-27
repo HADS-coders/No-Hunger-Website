@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
   $uname=$_POST['email'];
   $psw=$_POST['password'];
 
-  $query="SELECT * FROM HOTEL WHERE EMAIL='$uname' && password='$psw' ";
+  $query="SELECT * FROM hotel WHERE EMAIL='$uname' && password='$psw' ";
   $data=mysqli_query($conn,$query);
 
   $total=mysqli_num_rows($data);
