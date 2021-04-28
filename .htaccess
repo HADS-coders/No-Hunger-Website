@@ -1,0 +1,15 @@
+RewriteEngine on
+
+# Remove .php-extension from url
+
+# check if requested REQUEST_FILENAME is not same as directory name
+  
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check for file in dir with .php extension
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+# Here we actually show the page that has .php extension
+
+RewriteRule ^(.*)$ $1.php [NC,L]

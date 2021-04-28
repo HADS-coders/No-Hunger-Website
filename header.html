@@ -1,0 +1,96 @@
+<style>
+
+    /* Header/Blog Title */
+    .header {
+    color: black;
+    padding-top: 30px;
+    background:inherit;
+    }
+
+    .header .marquee
+    {
+    font-size: 19px;
+    }
+
+    .up-section{
+    display: flex;
+    }
+
+    .up-section .logo{
+    padding-right: 20px;
+    padding-left: 20%;
+    }
+
+    .title{
+    font-size: 45px;
+    margin: 20px 0;
+    }
+
+    .subtitle{
+    font-size: 35px;
+    margin: 0;
+    }
+
+    @media screen and (max-width:1000px) {
+
+    .logo img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .up-section .logo{
+        padding-left:15%;
+    }
+
+    .title{
+    font-size: 30px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+        margin: 0;
+    }
+
+    }
+
+    @media screen and (max-width:400px) {
+
+    .logo img{
+        width: 75px;
+        height: 75px;
+    }
+
+    .up-section .logo{
+        padding-left:15%;
+    }
+
+    .title{
+    font-size: 20px;
+    margin: 10px 0;
+    }
+
+    .subtitle{
+        font-size: 15px;
+    }
+
+    .marquee h3{
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    }
+
+</style>
+
+<div class="header">
+    <div class="up-section">
+      <div class="logo">
+        <img src="images/home/logo.jpg"  width="150px" height="150px" >
+      </div>
+      <div class="title-section">
+        <h1 class="title">THE NO HUNGER WEBSITE</h1>
+        <h2 class="subtitle">the motive line</h2>
+      </div>
+    </div>
+    <marquee class="marquee"><h3>Welcome to The No Hunger Website!</h3></marquee>
+</div>

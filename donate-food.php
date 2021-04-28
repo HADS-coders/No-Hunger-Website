@@ -8,48 +8,11 @@
       /*TO STYLE THE BODY*/
       body {
         font-family: Arial;
-        padding: 10px;
+        margin: 0;
         background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
+        background-attachment: fixed;
+        background-repeat: no-repeat;
       }
-      
-      /* Header/Blog Title */
-      .header {
-        padding: 30px;
-        padding-block-end: 30px;
-        padding-bottom: 40px;
-        background:inherit;
-        block-size: 250px;
-      }
-      
-      .header .h1
-      {
-        font-size: 45px;
-        position: absolute;
-        left: 500px;
-        top: 50px;
-      }
-      
-      .header  .img
-      {
-        position:absolute;
-        top:40px;
-        left:320px;
-      }
-      .header .h2
-      {
-        font-size: 35px;
-        position: absolute;
-        left: 510px;
-        top: 100px;
-      }
-       .header .marquee
-       {
-        font-size: 19px;
-        position: absolute;
-        top: 190px;
-       }
-      
-      
       
       /* Style the top navigation bar */
       .navbar {
@@ -221,29 +184,25 @@
     </style>
 </head>  
 <body>
-    <div class="header">
-        <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-        <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
-        <h2 class="h2">the motive line</h2>
-        <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
-          block on the right.</h3></marquee>
-    </div>
+    <?php
+    include_once('header.html');
+    ?>
       
       <div class="navbar">
-        <a href="home.html"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+        <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
         <div class="dropdown">
           <button class="dropbutton">Donation</button>
           <div class="dropdown-content">
-            <a href="donate-food.html">Food</a>
+            <a href="donate-food.php">Food</a>
             <a href="#">Money</a>
           </div>
         </div> 
         <div class="dropdown">
           <button class="dropbutton">Registration</button>
           <div class="dropdown-content">
-            <a href="registration-volunteer.html">Volunteer</a>
-            <a href="registration-ngo.html">NGO</a>
-            <a href="registration-hotel.html">Hotel</a>
+            <a href="registration-volunteer.php">Volunteer</a>
+            <a href="registration-ngo.php">NGO</a>
+            <a href="registration-hotel.php">Hotel</a>
           </div>
         </div>   
         <a href="#">Provide Info</a>
@@ -254,7 +213,7 @@
           <div class="card">
             <h1>RAW FOOD ITEMS</h1>
           <div class="imagecontainer">
-          <a href="donate-raw-food.html"><img class="pic1" src="donate-food/rawfood.jpg" border="3px"></img></a>
+          <a href="donate-raw-food.php"><img class="pic1" src="images/donate-food/rawfood.jpg" border="3px"></img></a>
          </div>
           <p class="p1">
             You can donate raw food items like Rice, Wheat etc.<br>
@@ -266,7 +225,7 @@
           <div class="card">
             <h1>COOKED FOOD ITEMS</h1>
             <div class="imagecontainer">
-             <a href="donate-cooked-food.html"><img class="pic1" src="donate-food/cookedfood.jpg" border="3px"></img></a>
+             <a href="donate-cooked-food.php"><img class="pic1" src="images/donate-food/cookedfood.jpg" border="3px"></img></a>
              </div>
              <p class="p2">
               You can donate Cooked food items like cooked Rice , Chapati etc. <br>

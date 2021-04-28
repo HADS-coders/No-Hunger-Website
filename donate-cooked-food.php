@@ -1,3 +1,8 @@
+<?php
+include("connection.php");
+error_reporting(0)
+?>
+
 <html>
 <head>
 <style>
@@ -8,47 +13,11 @@
 /*TO STYLE THE BODY*/
 body {
   font-family: Arial;
-  padding: 10px;
+  margin: 0;
   background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  padding-block-end: 30px;
-  padding-bottom: 40px;
-  background:inherit;
-  block-size: 250px;
-}
-
-.header .h1
-{
-  font-size: 45px;
-  position: absolute;
-  left: 500px;
-  top: 50px;
-}
-.header  .img
-{
-  position:absolute;
-  top:40px;
-  left:320px;
-}
-.header .h2
-{
-  font-size: 35px;
-  position: absolute;
-  left: 510px;
-  top: 100px;
-}
- .header .marquee
- {
-  font-size: 19px;
-  position: absolute;
-  top: 190px;
- }
-
-
 
 /* Style the top navigation bar */
 .navbar {
@@ -505,29 +474,25 @@ img {vertical-align: middle;}
 </head>
 <body>
 
-<div class="header">
-  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
-  <h2 class="h2">the motive line</h2>
-  <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
-    block on the right.</h3></marquee>
-</div>
+<?php
+    include_once('header.html');
+    ?>
 
 <div class="navbar">
-  <a href="home.html"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
-      <a href="donate-food.html">Food</a>
+      <a href="donate-food.php">Food</a>
       <a href="#">Money</a>
     </div>
   </div> 
   <div class="dropdown">
     <button class="dropbutton">Registration</button>
     <div class="dropdown-content">
-      <a href="registration-volunteer.html">Volunteer</a>
-      <a href="registration-ngo.html">NGO</a>
-      <a href="registration-hotel.html">Hotel</a>
+      <a href="registration-volunteer.php">Volunteer</a>
+      <a href="registration-ngo.php">NGO</a>
+      <a href="registration-hotel.php">Hotel</a>
     </div>
   </div>   
   <a href="#">Provide Info</a>
@@ -537,33 +502,33 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">COOKED FOOD DONATION</h1>
-    <form>
+    <form method="post">
     <label for="fname"> Donator's Name</label>
-     <input type="text" id="fname" placeholder="Enter Hotel's Name" required>
+     <input type="text" id="fname" name="d_name" placeholder="Enter Hotel's Name" required>
 
      <label for="email">Email</label>
-    <input type="email" id="email" placeholder="Enter your Email ID" required>
+    <input type="email" id="email" name="email" placeholder="Enter your Email ID" required>
 
      <label for="Number"> Contact Number</label>
-     <input type="text" id="number" placeholder="Enter Contact No." required>
+     <input type="text" id="number" name="c_name" placeholder="Enter Contact No." required>
 
      <label for="uname">City</label>
-     <input type="text" id="uname" placeholder="Enter City Name" required>
+     <input type="text" id="uname" name="city"  placeholder="Enter City Name" required>
 
      <label for="add">Address</label>
-     <input type="text" id="add" placeholder="Enter Address" required>
+     <input type="text" id="add"  name="address" placeholder="Enter Address" required>
 
      <label for="person">The Food provided can feed how much person ?</label>
-     <input type="text" id="person" placeholder="Enter the number of person's" required>
+     <input type="text" id="person" name="feed" placeholder="Enter the number of person's" required>
 
     
     <label for="name">Food Items:</label><p></p>
     <input type="text" id="name" placeholder="Enter the Name of  Cooked Food items " autocomplete="off"><P></P>
 
-    <button class="button2 "id="btnAdd">Add to List</button><p></p>
+    <button class="button2 "id="btnAdd" name="ok" >Add to List</button><p></p>
 
     <label for="list">Food Items List:</label><p></p>
-    <select id="list" name="list" class="list" multiple>
+    <select id="list" name="items" class="list" multiple>
 
     </select><p></p>
     <button class="button2" id="btnRemove">Remove from List</button>
@@ -573,13 +538,13 @@ img {vertical-align: middle;}
     <span class="checkmark"></span>
     </label>
     <label id="label" style="display: none;">Number of Packets</label>
-    <input type="text" id="text" style="display:none" placeholder="Enter the number of Packets"></input>
+    <input type="text" id="text" style="display:none" name="no_packets" placeholder="Enter the number of Packets"></input>
     <p></p>
     <label class="container">
     <input type="checkbox">I Agree to all the terms & conditions & hereby confirm that all the information provided by me is correct .
     <span class="checkmark"></span>
     </label>
-    <input type="submit" value="Submit"> 
+    <input type="submit" name="submit" value="Submit"> 
     </form>
     </div>
   </div>
@@ -590,7 +555,7 @@ img {vertical-align: middle;}
         
         <div class="mySlides fade"> 
           <div class="numbertext">STEPS TO ADD FOOD ITEMS</div>
-          <img src="donate-cooked-food/pic1.png" class="simage">
+          <img src="images/donate-cooked-food/pic1.png" class="simage">
           <h2 class="text">PROCEDURE TO ADD FOOD ITEMS TO THE LIST 
             (STEPS)
           </h2>
@@ -598,48 +563,48 @@ img {vertical-align: middle;}
         
         <div class="mySlides fade">
           <div class="numbertext">1 / 7</div>
-          <img src="donate-cooked-food/pic2.png" class="simage">
+          <img src="images/donate-cooked-food/pic2.png" class="simage">
           <h2 class="text">Add the number of persons the food is sufficient for (minimum 5 persons) and add the food item name</h2>
         </div>
         
         <div class="mySlides fade"> 
           <div class="numbertext">2 / 7</div>
-          <img src="donate-cooked-food/pic3.png" class="simage">
+          <img src="images/donate-cooked-food/pic3.png" class="simage">
           <h2 class="text">Click on "Add to List" button to add the entered food item to the list or press "ENTER" .
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">3 / 7</div>
-          <img src="donate-cooked-food/pic4.png" class="simage">
+          <img src="images/donate-cooked-food/pic4.png" class="simage">
           <h2 class="text">Now you can see the added item into the list. Add the items to the list as much as you want.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">4 / 7</div>
-          <img src="donate-cooked-food/pic5.png" class="simage">
+          <img src="images/donate-cooked-food/pic5.png" class="simage">
           <h2 class="text">To Delete an item from the list select that item or you can also select multiple items.
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">5 / 7</div>
-          <img src="donate-cooked-food/pic6.png" class="simage">
+          <img src="images/donate-cooked-food/pic6.png" class="simage">
           <h2 class="text">Click on "Remove from List" button to remone the selected items from the list. 
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">6 / 7</div>
-          <img src="donate-cooked-food/pic7.png" class="simage">
+          <img src="images/donate-cooked-food/pic7.png" class="simage">
           <h2 class="text">If you need food packets to pack food click on the shown checkbox 
           </h2>
         </div>
 
         <div class="mySlides fade"> 
           <div class="numbertext">7 / 7</div>
-          <img src="donate-cooked-food/pic8.png" class="simage">
+          <img src="images/donate-cooked-food/pic8.png" class="simage">
           <h2 class="text">A text field will appear in which you can enter the nymwber of packets you required.
             (NOTE: One packet consist of 2 silver containers , 1 plastic container)
           </h2>
@@ -741,3 +706,30 @@ function display(){
 
 </body>
 </html>
+
+<?php
+
+if(isset($_POST['submit']))
+{
+  $name=$_POST['d_name'];
+  $em=$_POST['email'];
+  $cn=$_POST['c_name'];
+  $ct=$_POST['city'];
+  $add=$_POST['address'];
+  $feed=$_POST['feed'];
+  $li=$_POST['items'];
+  $pac=$_POST['no_packets'];
+
+  $query="INSERT INTO cooked VALUES ('$name','$em','$cn','$ct','$add','$feed', '$li','$pac')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database";
+  }
+  else
+  {
+  echo "Failed to insert Data inserted into Database ".mysqli_error($conn);
+  }
+}
+?>

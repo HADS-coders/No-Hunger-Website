@@ -1,3 +1,8 @@
+<?php
+include_once("connection.php");
+error_reporting(0)
+?>
+
 <html>
 <head>
 <style>
@@ -8,48 +13,11 @@
 /*TO STYLE THE BODY*/
 body {
   font-family: Arial;
-  padding: 10px;
+  margin: 0;
   background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  padding-block-end: 30px;
-  padding-bottom: 40px;
-  background:inherit;
-  block-size: 250px;
-}
-
-.header .h1
-{
-  font-size: 45px;
-  position: absolute;
-  left: 500px;
-  top: 50px;
-}
-.header  .img
-{
-  position:absolute;
-  top:40px;
-  left:320px;
-}
-.header .h2
-{
-  font-size: 35px;
-  position: absolute;
-  left: 510px;
-  top: 100px;
-}
- .header .marquee
- {
-  font-size: 19px;
-  position: absolute;
-  top: 190px;
- }
-
-
-
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -64,12 +32,13 @@ body {
   border-radius:50%;
 }
 
+
 /* Style the topnav links */
 .navbar a {
   font-size: 31px;
   float: left;
   display: block;
-  color: black;
+  color:black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -86,7 +55,7 @@ body {
   font-size: 31px;  
   border: none;
   outline: none;
-  color:black;
+  color: black;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -112,7 +81,7 @@ body {
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color:black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -149,17 +118,13 @@ body {
   background-color:white;
   padding: 20px;
   margin-top: 20px;
-  block-size: 1100px;
-  color: black;
+  block-size: 930px;
 }
 .card {
   border-radius: 5%;
   background-color:white;
   padding: 20px;
   margin-top: 20px;
-  color: black;
-}
-.ctext{
   color: black;
 }
 
@@ -170,6 +135,7 @@ height:65%;
 padding: 20px;
 margin-top: 20px;
 }
+
 
 
 /* Clear floats after the columns */
@@ -223,25 +189,20 @@ height: 50px;
 padding: 10px;
 font-size: 19;
 margin: 15px 0;
-color:black;
+color: white;
 background-color: inherit;
 border:1px solid black;
 }
-.select
-{
-  background-color:white;
-  color:black;
-}
 
 
-input[type=email],select
+input[type=email]
 {
 width:100%;
 height: 50px;
 padding: 10px;
 font-size: 19;
 margin: 15px 0;
-color: black;
+color: white;
 background-color: inherit;
 border:1px solid black;
 }
@@ -253,7 +214,7 @@ height: 50px;
 padding: 10px;
 font-size: 19;
 margin: 15px 0;
-color: black;
+color: white;
 background-color: inherit;
 border:1px solid black;
 }
@@ -265,37 +226,22 @@ height: 50px;
 padding: 10px;
 font-size: 19;
 margin: 15px 0;
-color:black;
+color: white;
 background-color: inherit;
 border:1px solid black;
 }
 
-
-.select1
-{
-  width:40%;
-height: 50px;
-padding: 10px;
-font-size: 19;
-margin: 15px 5px;
-color: black;
-background-color: white;
-border:1px solid black;
-}
-
-
-
 input[type=submit]
 {
-border-radius: 3%;
-width:20%;
-height: 50px;
-padding: 10px;
-font-size: 19;
-margin: 15px 0;
-color: black;
-background-color: white;
-border:1px solid black;
+  border-radius: 5%;
+  width:20%;
+  height: 50px;
+  padding: 10px;
+  font-size: 19;
+  margin: 15px 0;
+  color: black;
+  background-color: white;
+  border:1px solid black;
 }
 
 input[type=submit]:hover
@@ -316,6 +262,7 @@ background-color: rgb(56, 182, 56);
    color: black;
  }
 
+
 /*slideshow*/
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
@@ -324,19 +271,19 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  width: 10%;
-  height:41%;
+  width: 50%;
+  height:70%;
   position: absolute;
-  top: 47%;
-  right: 15%;
+  top: 50%;
+  right: -25%;
   margin: auto;
 }
 
 .simage
 {
   border-radius: 5%;
-  width: 240%;
-  height:150%;
+  width: 47%;
+  height:88%;
 }
 
 /* Caption text */
@@ -344,18 +291,18 @@ img {vertical-align: middle;}
   color: white;
   font-size: 27px;
   font: bolder;
-  padding: 10px 12px;
+  padding: 8px 12px;
   position: absolute;
-  left:30%;
-  top: 75%;
-  width: 170%;
+  bottom:10%;
+  width: 40%;
+  right: 58%;
   text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
-  font-size: 25px;
+  font-size: 27px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
@@ -401,32 +348,31 @@ img {vertical-align: middle;}
   }
 }
 
+
+
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg" width="150" height="150"></image></div>
-  <h2 class="h2">the motive line</h2>
-  <marquee class="marquee"><h3>Fill the form to get register as volunteer.Working together we can feed hundreds of hungry people. </h3></marquee>
-</div>
+<?php
+    include_once('header.html');
+    ?>
 
 <div class="navbar">
-  <a href="home.html"><image src="home/home.jpg" width="30" height="30" class="navimage"></image></a>
+  <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
-      <a href="donate-food.html">Food</a>
+      <a href="donate-food.php">Food</a>
       <a href="#">Money</a>
     </div>
   </div> 
   <div class="dropdown">
     <button class="dropbutton">Registration</button>
     <div class="dropdown-content">
-      <a href="registration-volunteer.html">Volunteer</a>
-      <a href="registration-ngo.html">NGO</a>
-      <a href="registration-hotel.html">Hotel</a>
+      <a href="registration-volunteer.php">Volunteer</a>
+      <a href="registration-ngo.php">NGO</a>
+      <a href="registration-hotel.php">Hotel</a>
     </div>
   </div>   
   <a href="#">Provide Info</a>
@@ -435,51 +381,21 @@ img {vertical-align: middle;}
 <div class="row">
   <div class="leftcolumn">
     <div class="card1">
-      <h1 class="new-h1">VOLUNTEER'S REGISTRATION</h1>
-    <form>
-    <label for="fname" >Name</label>
-     <input type="text" id="fname" placeholder="Enter Full Name" required>
-     <label for="uname" >User Name</label>
-     <input type="text" id="uname" placeholder="Enter User Name" required>
-     <label for="email" >Email</label>
-     <input type="email" id="email" placeholder="Enter Email ID" required>
-     <label for="Number" > Mobile Number</label>
-     <input type="text" id="number" placeholder="Enter Mobile No." required>
+      <h1 class="new-h1">HOTEL'S REGISTRATION</h1>
+    <form method="post">
+    <label for="fname"> Hotel Name</label>
+     <input type="text" id="fname" name="hotel_name" placeholder="Enter Hotel's Name" required>
+     <label for="uname">User Name</label>
+     <input type="text" id="uname" name="username" placeholder="Enter User Name" required>
+     <label for="email">Email</label>
+     <input type="email" id="email" name="email" placeholder="Enter your Email ID">
+     <label for="Number"> Contact Number</label>
+     <input type="text" id="number" name="contact" placeholder="Enter Contact No." required>
      <label for="pass">Password</label>
-     <input type="password" id="pass" placeholder="Enter password" required>
+     <input type="password" id="pass" name="password" placeholder="Enter password" required>
      <label for="confirm">Confirm password</label>
-     <input type="password" id="confirm" placeholder="Confirm password" required>
-
-     <select class="select">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-     </select>
-     <p></p>
-     <label>How many days you will like to work with us ?</label>
-     <p></p>
-     <select class="select1">
-      <option value="" hidden>From</option>
-      <option value="1">Sunday</option>
-      <option value="2">Monday</option>
-      <option value="3">Tuesday</option>
-      <option value="4">Wednesday</option>
-      <option value="5">Thursday</option>
-      <option value="6">Friday</option>
-      <option value="7">Saturday</option>
-      </select>
-     <select class="select1">
-      <option value="" hidden>Till</option>
-      <option value="1">Sunday</option>
-      <option value="2">Monday</option>
-      <option value="3">Tuesday</option>
-      <option value="4">Wednesday</option>
-      <option value="5">Thursday</option>
-      <option value="6">Friday</option>
-      <option value="7">Saturday</option>
-     </select>
-      <p></p>
-     <input type="submit" value="Submit">
+     <input type="password" id="confirm" name="confirm_password" placeholder="Confirm password" required>
+     <input type="submit" name="submit" value="Submit">
     </form>
     </div>
   </div>
@@ -490,34 +406,35 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 4</div>
-          <img src="volunteer/volunteer1.jpg" class="simage">
-          <h2 class="text">Volunteer's are the root elements of our team.</h2>
+          <img src="images/hotel/hotel1.jpg" class="simage">
+          <h2 class="text">Hotel plays a main role in our system</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 4</div>
-          <img src="volunteer/volunteer2.jpg" class="simage">
-          <h2 class="text">Volunteers has to collect the food from hotels.</h2>
+          <img src="images/hotel/hotel2.jpg" class="simage">
+          <h2 class="text">Instead of throwing the excess food in hotels</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 4</div>
-          <img src="volunteer/volunteer3.jpg" class="simage">
-          <h2 class="text">Pack the food provided by the hotels.</h2>
+          <img src="images/hotel/hotel3.jpg" class="simage">
+          <h2 class="text">You can hand over it to our volunteers packed/unpacked</h2>
         </div>
-
+        
         <div class="mySlides fade">
-          <div class="numbertext">3 / 4</div>
-          <img src="volunteer/volunteer4.jpg" class="simage">
-          <h2 class="text">Distribute the packets to the needy.</h2>
-        </div>
+            <div class="numbertext">4 / 4</div>
+            <img src="images/hotel/hotel4.jpg" class="simage">
+            <h2 class="text">Also you can be a part of our team and directly deliver the food</h2>
+          </div>
         
         </div>
 
     </div>
+
     <div class="card">
-      <h3>Volunteer's working with us</h3>
-      <p>5000 volunteers</p>
+      <h3> Number of Hotel's associated with us</h3>
+      <p>3000+ hotel's currently working with us</p>
     </div>
     <div class="card">
       <h3>Food donated till now</h3>
@@ -531,6 +448,8 @@ img {vertical-align: middle;}
   </div>
 </div>
 
+
+
 <script>
   var slideIndex = 0;
   showSlides();
@@ -538,17 +457,39 @@ img {vertical-align: middle;}
   function showSlides() {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
   }
   </script>
 
-
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit']))
+{
+  $hotel=$_POST['hotel_name'];
+  $un=$_POST['username'];
+  $em=$_POST['email'];
+  $cn=$_POST['contact'];
+  $pwd=$_POST['password'];
+  $conpwd=$_POST['confirm_password'];
+
+
+  $query="INSERT INTO hotel VALUES ('$hotel','$un','$em','$cn','$pwd','$conpwd')";
+  $data=mysqli_query($conn,$query);
+
+  if($data)
+  {
+  echo "Data inserted into Database\n";
+  }
+  else{
+    echo "Data not inserted".mysqli_error($conn);
+  }
+}
+?>
