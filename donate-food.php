@@ -151,26 +151,13 @@
         margin-top: 20px;
       }
       
-      .p1{
+      .text{
         font-size: 23;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font: bolder;
         text-align: center;
-        position: absolute;
-        top: 120%;
-        left: 10%;
-      }
-
-      .p2{
-        font-size: 23;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font: bolder;
-        text-align: center;
-        position: absolute;
-        top: 120%;
-        right: 3%;
-      }
-      
+        margin-top: 20px;
+      }  
       
       
       /* Clear floats after the columns */
@@ -212,13 +199,13 @@
         <div class="leftcolumn">
           <div class="card">
             <h1>RAW FOOD ITEMS</h1>
-          <div class="imagecontainer">
-          <a href="donate-raw-food.php"><img class="pic1" src="images/donate-food/rawfood.jpg" border="3px"></img></a>
-         </div>
-          <p class="p1">
-            You can donate raw food items like Rice, Wheat etc.<br>
-            We will Deliver it to the needy in form of Packets.<br>You can pack it for us or we will provide
-            <br> you the packets.</p>
+            <div class="imagecontainer">
+            <a href="donate-raw-food.php"><img class="pic1" src="images/donate-food/rawfood.jpg" border="3px"></img></a>
+            </div>
+            <p class="text">
+              You can donate raw food items like Rice, Wheat etc.<br>
+              We will Deliver it to the needy in form of Packets.<br>You can pack it for us or we will provide
+              <br> you the packets.</p>
           </div>
         </div>
         <div class="rightcolumn">
@@ -227,7 +214,7 @@
             <div class="imagecontainer">
              <a href="donate-cooked-food.php"><img class="pic1" src="images/donate-food/cookedfood.jpg" border="3px"></img></a>
              </div>
-             <p class="p2">
+             <p class="text">
               You can donate Cooked food items like cooked Rice , Chapati etc. <br>
               We will Deliver it to the needy in form of Packets.<br>You can pack it for us or we will provide <br>
               you the packets.</p>
