@@ -1,3 +1,8 @@
+<?php
+include("connection.php");
+error_reporting(0)
+?>
+
 <head>
 <style>
 * {
@@ -902,7 +907,7 @@ span.psw a{
 <!-- #modal 2 -->
 <div id="id02" class="modal2">
   
-  <form class="modal2-content" action="/action_page.php" method="post">
+  <form class="modal2-content" method="POST">
     <div class="imgcontainer animate">
       <span onclick="document.getElementById('id02').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
       <img src="modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
@@ -917,7 +922,7 @@ span.psw a{
       <p></p>
       <input class="text" type="password" placeholder="Enter Password" name="psw" required>
       <p></p>  
-      <button class="text" type="submit">Login</button>
+      <input class="text" type="submit" name="submit" value="Login">Login</input>
       <p></p>
       <label class="text">
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -1003,3 +1008,34 @@ span.psw a{
 
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit']))
+{
+  $uname=$_POST['uname'];
+  $psw=$_POST['psw'];
+  echo $uname.$psw;
+
+  $query="SELECT * FROM vol WHERE EMAIL='$uname' && password='$psw' ";
+  $data=mysqli_query($conn,$query);
+
+  $total=mysqli_num_rows($data);
+  echo $total;
+
+  if($total == 1)
+  {
+  echo "login OK";
+  try{
+  header('Location:index.php');
+  }catch(Exception $e){
+    echo "Exception".$e->getMessage();
+  }
+  }
+  else
+  {
+   echo "Login Failed";
+   header('Location:error.php');
+  }
+}
+
+?>

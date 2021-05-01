@@ -113,7 +113,6 @@
       .card {
         text-align: center;
         margin: 24px 0 12px 0;
-        block-size: 700px;
         background-color: white;
         padding: 20px;
       }
