@@ -10,7 +10,7 @@
         public $lname;
         public $email;
         public $number;
-        public $usernme;
+        public $username;
         public $password;
 
         //constructor with db connection
