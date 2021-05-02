@@ -16,6 +16,7 @@
         //core classes
         // require_once(CORE_PATH.DS.'person.php');
         require_once('person.php');
+        require_once('volunteer.php');
     }
     catch (Exception $e){
         echo $e->getMessage();

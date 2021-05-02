@@ -1,6 +1,7 @@
 <?php
 
-include_once('../core/volunteer.php');
+//initialising our api
+include_once('../core/initialise.php');
 
 $vol = new Volunteer($db);
 
