@@ -38,6 +38,9 @@
                     return true;
                 }
 
+                //match not found
+                return false;
+
             }
             catch(Exception $e){
                 //print error if something goes wrong
