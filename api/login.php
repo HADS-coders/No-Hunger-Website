@@ -19,7 +19,6 @@ $dbname = "qW0jycIN5x";
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 if($conn)
 {
-    echo "Connection OK";
     $vol = new Volunteer($conn);
     //get raw posted data
     $data = json_decode(file_get_contents('php://input'));
