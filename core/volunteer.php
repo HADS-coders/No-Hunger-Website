@@ -1,5 +1,6 @@
 <?php
 
+
     class Volunteer{
         private $conn;
         private $table = 'vol';
@@ -21,26 +22,30 @@
 
         public function login(){
 
-            $query = 'select * from '.$this->table.' where email = :email and password = :password';
+            $query = 'select * from '.$this->table.' where email = "'.$this->email.'" and password = "'.$this->password.'"';
 
-            $stmt = $this->conn->prepare($query);
-
-            //clear data
             $this->email = htmlspecialchars(strip_tags($this->email));
             $this->password = htmlspecialchars(strip_tags($this->password));
 
-            //bind param
-            $stmt->bindParam(':email',$this->email);
-            $stmt->bindParam(':password',$this->password);
+            try{
 
-            //execute
-            if($stmt->execute()){
-                return true;
+                $data=mysqli_query($this->conn,$query);
+
+                $row=mysqli_num_rows($data);
+
+                //if match found
+                if($row == 1){
+                    return true;
+                }
+
+            }
+            catch(Exception $e){
+                //print error if something goes wrong
+                echo mysqli_error($this->conn);
+                return false;
             }
 
-            //print error if something goes wrong
-            printf("Error %s. \n",$stmt->error);
-            return false;
+            
         }
     }
 ?>
