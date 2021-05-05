@@ -26,10 +26,12 @@ if($conn)
     $vol->email = $data->email;
     $vol->password = $data->password;
 
-    if($vol->login()){
+    $result = $vol->login();
+
+    if($result!=null){
 
         echo json_encode(
-            array('message'=>'Login Success')
+            array('message'=>'Login Success','data'=>$result)
         );
 
     }else{

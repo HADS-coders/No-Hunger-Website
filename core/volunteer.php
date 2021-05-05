@@ -35,11 +35,13 @@
 
                 //if match found
                 if($row == 1){
-                    return true;
+                    $result= $data->fetch_assoc();
+                    echo $result;
+                    return $result;
                 }
 
                 //match not found
-                return false;
+                return null;
 
             }
             catch(Exception $e){
