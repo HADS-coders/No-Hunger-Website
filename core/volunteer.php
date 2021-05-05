@@ -36,7 +36,6 @@
                 //if match found
                 if($row == 1){
                     $result= $data->fetch_assoc();
-                    echo $result;
                     return $result;
                 }
 
