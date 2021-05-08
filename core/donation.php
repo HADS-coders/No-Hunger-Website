@@ -39,6 +39,8 @@
 
             $this->donation_id = mysqli_insert_id($this->conn) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($this->conn), E_USER_ERROR);
 
+            $this->food=json_decode($this->food);   //decode back string to object
+
             $foodDetail = new Food($this->conn);
 
             $foodDetail->type = $this->food->type;

@@ -20,15 +20,10 @@ if($conn){
     $donation->number = $data->number;
     $donation->longitude = $data->longitude;
     $donation->latitude = $data->latitude;
-    $donation->food = $data->food;
+    $donation->food = json_encode($data->food);
     $donation->time = $data->time;
 
-    echo $donation->name;
-
-    // echo json_encode(array('food'=>$donation->food));
-
-    // echo json_encode(array('food type'=>$donation->food->type));
-
+    
     //add donation to db
     $result = $donation->add();
 
@@ -37,11 +32,6 @@ if($conn){
     }else {
         echo json_encode(array('message'=>'Failed'));
     }
-
-    // $list =  $data->food->foodItems;
-    // foreach($list as $elem){
-    //     echo json_encode($elem);
-    // }
 
 }
 
