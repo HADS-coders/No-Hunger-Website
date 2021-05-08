@@ -38,6 +38,8 @@
 
             $this->donation_id = mysqli_insert_id($this->conn);
 
+            echo $this->donation_id;
+
             $foodDetail = new Food($this->conn);
 
             $foodDetail->type = $this->food->type;

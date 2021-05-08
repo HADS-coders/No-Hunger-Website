@@ -23,6 +23,8 @@ class Food{
         $result = mysqli_query($this->conn,$query);
 
         $this->food_id = mysqli_insert_id($this->conn);
+
+        echo $this->food_id;
         
         $foodItemsList = $this->foodItems;
         foreach ($foodItemsList as $elem) {

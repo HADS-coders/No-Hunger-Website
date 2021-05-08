@@ -18,6 +18,8 @@ class FoodItem{
 
         $result = mysqli_query($this->conn,$query);
 
+        echo $result;
+
         return $result;
     }
 }
