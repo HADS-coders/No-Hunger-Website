@@ -23,8 +23,8 @@ if($conn){
     $donation->food = $data->food;
     $donation->time = $data->time;
 
-    echo json_encode(array('food'=>$food));
-    echo json_encode(array('food type'=>json_decode($food)['type']));
+    echo json_encode(array('food'=>$donation->food));
+    echo json_encode(array('food type'=>json_decode($donation->food)['type']));
 }
 
 ?>
