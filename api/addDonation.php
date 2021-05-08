@@ -24,11 +24,22 @@ if($conn){
     $donation->time = $data->time;
 
     // echo json_encode(array('food'=>$donation->food));
-    try{
-    echo json_encode(array('food type'=>json_decode($donation->food)['type']));
-    }catch(Exception $e){
-        echo $e->getMessage();
+
+    // echo json_encode(array('food type'=>$donation->food->type));
+
+    //add donation to db
+    $result = $donation->add();
+
+    if($result){
+        echo json_encode(array('message'=>'Success'));
+    }else {
+        echo json_encode(array('message'=>'Failed'));
     }
+
+    // $list =  $data->food->foodItems;
+    // foreach($list as $elem){
+    //     echo json_encode($elem);
+    // }
 
 }
 
