@@ -33,7 +33,7 @@ while($stmt->fetch()){
     }
 }
 
-echo json_encode($filtered_id);
+// echo json_encode($filtered_id);
 
 $filtered_data = array();
 $filtered_data['data'] = array();
@@ -99,6 +99,7 @@ foreach($filtered_id as $id){
     array_push($filtered_data['data'],$request);
 }
 
+echo json_encode($filtered_data);
 
 
 function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {
