@@ -11,7 +11,7 @@ $query = 'SELECT longitude,latitude from donation';
 $result = mysqli_query($conn,$query);
 $data = $result->fetch_all();
 foreach ($data as $d) {
-    echo $d->longitude;
+    echo $d['longitude'];
 }
 
 ?>
