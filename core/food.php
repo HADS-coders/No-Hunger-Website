@@ -20,7 +20,10 @@ class Food{
         $query = 'INSERT INTO '.$this->table.' ( type, time, havePackets, donation_id) VALUES 
         ( '.$this->type.' , '.$this->time.', '.$this->havePackets.', '.$this->donation_id.')';
 
-        $result = mysqli_query($this->conn,$query);
+        if(!$result = mysqli_query($this->conn,$query)){
+            echo mysqli_connect_error()
+        }
+
 
         $this->food_id = mysqli_insert_id($this->conn);
 

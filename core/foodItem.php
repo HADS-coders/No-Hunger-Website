@@ -16,9 +16,9 @@ class FoodItem{
     public function add(){
         $query = 'insert into'.$this->table.' values ( '.$this->name.','.$this->amount.', '.$this->food_id.')';
 
-        $result = mysqli_query($this->conn,$query);
-
-        echo $result;
+        if(!$result = mysqli_query($this->conn,$query)){
+            echo mysqli_connect_error();
+        }
 
         return $result;
     }

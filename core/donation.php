@@ -34,7 +34,9 @@
             $this->latitude = htmlspecialchars(strip_tags($this->latitude));
             $this->time = htmlspecialchars(strip_tags($this->time));
 
-            $result = mysqli_query($this->conn,$query);
+            if(!$result = mysqli_query($this->conn,$query)){
+                echo mysqli_connect_error();
+            }
 
             $this->donation_id = mysqli_insert_id($this->conn);
 
