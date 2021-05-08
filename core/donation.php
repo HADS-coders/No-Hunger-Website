@@ -24,7 +24,7 @@
         public function add(){
 
             $query = 'INSERT INTO '.$this->table.' ( name, number, email, longitude, latitude, time) VALUES 
-            ( '.$this->name.', '.$this->number.', '.$this->email.', '.$this->longitude.', '.$this->latitude.', '.$this->time.' )';
+            ( "'.$this->name.'", "'.$this->number.'", "'.$this->email.'", "'.$this->longitude.'", "'.$this->latitude.'", "'.$this->time.'")';
 
 
             $this->name = htmlspecialchars(strip_tags($this->name));
@@ -36,11 +36,8 @@
 
 
             $result = mysqli_query($this->conn, $query);
-            echo $result;
 
-            $this->donation_id = mysqli_insert_id($this->conn);
-
-            echo $this->donation_id;
+            $this->donation_id = mysqli_insert_id($this->conn) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($this->conn), E_USER_ERROR);
 
             $foodDetail = new Food($this->conn);
 

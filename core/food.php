@@ -18,15 +18,12 @@ class Food{
     public function add(){
 
         $query = 'INSERT INTO '.$this->table.' ( type, time, havePackets, donation_id) VALUES 
-        ( '.$this->type.' , '.$this->time.', '.$this->havePackets.', '.$this->donation_id.')';
+        ( "'.$this->type.'" , "'.$this->time.'", "'.$this->havePackets.'", "'.$this->donation_id.'")';
 
         $result = mysqli_query($this->conn, $query) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($this->conn), E_USER_ERROR);
 
-
         $this->food_id = mysqli_insert_id($this->conn);
 
-        echo $this->food_id;
-        
         $foodItemsList = $this->foodItems;
         foreach ($foodItemsList as $elem) {
             $foodItem = new FoodItem($this->conn);
