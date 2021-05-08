@@ -23,7 +23,8 @@ $row = $stmt->fetch();
 // while ($row){
 //     echo $longitude.'  '.$latitude;
 // }
-echo $row['longitude'];
+echo $longitude;
+echo $row;
 // $result = mysqli_query($conn,$query);
 // $rows = $result->fetch_all(MYSQLI_ASSOC);
 // foreach ($rows as $row) {
