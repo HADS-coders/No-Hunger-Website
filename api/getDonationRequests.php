@@ -33,7 +33,6 @@ while($stmt->fetch()){
     }
 }
 
-// echo json_encode($filtered_id);
 
 $filtered_data = array();
 $filtered_data['data'] = array();
@@ -85,11 +84,9 @@ foreach($filtered_id as $id){
         foreach($rows as $row){
             $foodItem = array(
                 'food_id'=>$row['food_id'],
-                'type'=>$row['type'],
-                'havePackets'=>$row['havePackets'],
-                'time'=>$row['time'],
+                'name'=>$row['name'],
+                'amount'=>$row['amount'],
             );
-            echo json_encode($foodItem);
             array_push($foodItems,$foodItem);
         }
 
@@ -117,16 +114,5 @@ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longi
     } 
     return (round($distance,2)); 
   }
-
-
-// while ($row){
-//     echo $longitude.'  '.$latitude;
-// }
-
-// $result = mysqli_query($conn,$query);
-// $rows = $result->fetch_all(MYSQLI_ASSOC);
-// foreach ($rows as $row) {
-//     echo $row['longitude'];
-// }
 
 ?>
