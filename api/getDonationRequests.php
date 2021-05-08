@@ -89,6 +89,7 @@ foreach($filtered_id as $id){
                 'havePackets'=>$row['havePackets'],
                 'time'=>$row['time'],
             );
+            echo json_encode($foodItem);
             array_push($foodItems,$foodItem);
         }
 
