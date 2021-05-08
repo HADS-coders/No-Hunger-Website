@@ -20,9 +20,9 @@ $stmt->bind_result($longitude, $latitude);
 
 
 $row = $stmt->fetch();
-while ($row){
-    echo $longitude.'  '.$latitude;
-}
+// while ($row){
+//     echo $longitude.'  '.$latitude;
+// }
 echo $row['longitude'];
 // $result = mysqli_query($conn,$query);
 // $rows = $result->fetch_all(MYSQLI_ASSOC);
