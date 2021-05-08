@@ -35,7 +35,8 @@
             $this->time = htmlspecialchars(strip_tags($this->time));
 
 
-            $result = mysqli_query($this->conn, $query) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($this->conn), E_USER_ERROR);
+            $result = mysqli_query($this->conn, $query);
+            echo $result;
 
             $this->donation_id = mysqli_insert_id($this->conn);
 
