@@ -34,13 +34,12 @@
             $this->latitude = htmlspecialchars(strip_tags($this->latitude));
             $this->time = htmlspecialchars(strip_tags($this->time));
 
-            if(!$result = mysqli_query($this->conn,$query)){
-                echo mysqli_connect_error();
-            }
+
+            $result = mysqli_query($this->conn, $query) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($this->conn), E_USER_ERROR);
 
             $this->donation_id = mysqli_insert_id($this->conn);
 
-            echo $this->donation_id;
+            // echo $this->donation_id;
 
             $foodDetail = new Food($this->conn);
 
