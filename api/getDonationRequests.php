@@ -15,7 +15,7 @@ $stmt = $conn->prepare($query);
 $stmt->bind_param(1,$donation_id);
 
 $stmt->execute();
-$row = $stmt->fetch();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 echo $row['longitude'];
 // $result = mysqli_query($conn,$query);
 // $rows = $result->fetch_all(MYSQLI_ASSOC);
