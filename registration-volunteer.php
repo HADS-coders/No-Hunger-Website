@@ -404,16 +404,14 @@ img {vertical-align: middle;}
     <form method="post">
     <label for="fname" >Name</label>
      <input type="text" id="fname" name="name" placeholder="Enter Full Name" required>
-     <label for="uname" >User Name</label>
-     <input type="text" id="uname" name="user_name" placeholder="Enter User Name" required>
      <label for="email" >Email</label>
      <input type="email" id="email" name="email" placeholder="Enter Email ID" required>
      <label for="Number" > Mobile Number</label>
      <input type="text" id="number" name="mobile_number" placeholder="Enter Mobile No." required>
      <label for="pass">Password</label>
      <input type="password" id="pass" name="password" placeholder="Enter password" required>
-     <label for="confirm">Confirm password</label>
-     <input type="password" id="confirm" name="confirm_password" placeholder="Confirm password" required>
+     <label for="range">Range</label>
+     <input type="Number" id="range" name="range" placeholder="Enter range in Kilometer" required>
 
      <select class="select" name="gender">
       <option value="male">Male</option>
@@ -444,7 +442,7 @@ img {vertical-align: middle;}
       <option value="Saturday">Saturday</option>
      </select>
       <p></p>
-     <input type="submit" name="submit" value="Submit">
+     <input type="submit" name="submit" value="Submit" onclick="setLatLang()">
     </form>
     </div>
   </div>
@@ -512,6 +510,7 @@ img {vertical-align: middle;}
     slides[slideIndex-1].style.display = "block";  
     setTimeout(showSlides, 4000); // Change image every 2 seconds
   }
+
   </script>
 
 
@@ -521,17 +520,18 @@ img {vertical-align: middle;}
 <?php
 if(isset($_POST['submit']))
 {
-  $name=$_POST['Name'];
-  $un=$_POST['user_name'];
-  $em=$_POST['email'];
-  $cn=$_POST['mobile_number'];
-  $pwd=$_POST['password'];
-  $conpwd=$_POST['confirm_password'];
+  $name=$_POST['name'];
+  $email=$_POST['email'];
+  $number=$_POST['mobile_number'];
+  $password=$_POST['password'];
   $gender=$_POST['gender'];
+  $range = $_POST['range'];
   $from=$_POST['from'];
   $till=$_POST['till'];
+  $latitude = 18.9863049;
+  $longitude = 73.1069343;
 
-  $query="INSERT INTO vol VALUES ('$name','$un','$em','$cn','$pwd','$conpwd', '$gender', '$from','$till')";
+  $query="INSERT INTO vol VALUES ('$name','$email','$number','$password', '$gender', '$from','$till','$range','$latitude','$longitude')";
   $data=mysqli_query($conn,$query);
 
   if($data)
