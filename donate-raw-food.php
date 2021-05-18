@@ -18,6 +18,40 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Header/Blog Title */
+.header {
+  background:inherit;
+  block-size: 250px;
+}
+
+.header .h1
+{
+  font-size: 45px;
+  position: absolute;
+  left: 500px;
+  top: 50px;
+}
+.header  .img
+{
+  position:absolute;
+  top:7%;
+  left:20%;
+}
+.header .h2
+{
+  font-size: 35px;
+  position: absolute;
+  left: 510px;
+  top: 100px;
+}
+ .header .marquee
+ {
+  font-size: 19px;
+  position: absolute;
+  top: 190px;
+ }
+
+
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -466,14 +500,38 @@ img {vertical-align: middle;}
   transform: rotate(45deg);
 }
 
+.button3
+{
+  width: 20%;
+  height: 3%;
+  font-size: 130%;
+  border-radius: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button3:hover
+{
+  background-color: #2196F3;
+}
+
+.text2
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 130%;
+}
+
 /*CHECK BOX END*/
 </style>
 </head>
 <body>
 
-<?php
-    include_once('header.html');
-    ?>
+<div class="header">
+  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
+  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <h2 class="h2">the motive line</h2>
+  <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
+    block on the right.</h3></marquee>
+</div>
 
 <div class="navbar">
   <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
@@ -499,17 +557,17 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">RAW FOOD DONATION</h1>
-    <form method="post">
+    <form>
     <label for="fname"> Donator's Name</label>
-     <input type="text" id="fname" name="donators_name" placeholder="Enter Hotel's Name" required>
+     <input type="text" id="fname" placeholder="Enter Hotel's Name" required>
      <label for="email">Email</label>
-     <input type="email" id="email" name="email" placeholder="Enter your Email ID">
+     <input type="email" id="email" placeholder="Enter your Email ID">
      <label for="Number"> Contact Number</label>
-     <input type="text" id="number" name="contact" placeholder="Enter Contact No." required>
+     <input type="text" id="number" placeholder="Enter Contact No." required>
      <label for="uname">City</label>
-     <input type="text" id="uname" name="city" placeholder="Enter City Name" required>
+     <input type="text" id="uname" placeholder="Enter City Name" required>
      <label for="add">Address</label>
-     <input type="text" id="add" name="address" placeholder="Enter Address" required>
+     <input type="text" id="add" placeholder="Enter Address" required>
 
     
     <label for="name">Food Items:</label><p></p>
@@ -522,11 +580,15 @@ img {vertical-align: middle;}
 
     </select><p></p>
     <button class="button2" id="btnRemove">Remove from List</button>
+    <br>
     <label class="container">
     <input type="checkbox">I Agree to all the terms & conditions & hereby confirm that all the information provided by me is correct .
     <span class="checkmark"></span>
     </label>
-    <input type="submit" name="submit" value="Submit"> 
+    <br>
+    <button onclick="getLocation()" class="button3">My Location</button>
+    <p id="Location" class="text2"></p>
+    <input type="submit" value="Submit"> 
     </form>
     </div>
   </div>
@@ -664,6 +726,20 @@ img {vertical-align: middle;}
                 }
             }
         };
+
+var x = document.getElementById("Location");  
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
   </script>
 
 </body>

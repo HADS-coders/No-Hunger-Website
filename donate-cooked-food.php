@@ -13,11 +13,42 @@ error_reporting(0)
 /*TO STYLE THE BODY*/
 body {
   font-family: Arial;
-  margin: 0;
   background-image:linear-gradient(to right,rgb(46, 175, 169),rgb(20, 80, 160));
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
+
+/* Header/Blog Title */
+.header {
+  background:inherit;
+  block-size: 250px;
+}
+
+.header .h1
+{
+  font-size: 45px;
+  position: absolute;
+  left: 500px;
+  top: 50px;
+}
+.header  .img
+{
+  position:absolute;
+  top:7%;
+  left:20%;
+}
+.header .h2
+{
+  font-size: 35px;
+  position: absolute;
+  left: 510px;
+  top: 100px;
+}
+ .header .marquee
+ {
+  font-size: 19px;
+  position: absolute;
+  top: 190px;
+ }
+
 
 /* Style the top navigation bar */
 .navbar {
@@ -119,7 +150,7 @@ body {
   background-color:white;
   padding: 20px;
   margin-top: 20px;
-  block-size: 1700px;
+  block-size: 245%;
 }
 .card {
   border-radius: 5%;
@@ -234,7 +265,7 @@ border:1px solid black;
 
 input[type=submit]
 {
-  border-radius: 5%;
+  border-radius: 13px;
   width:20%;
   height: 50px;
   padding: 10px;
@@ -469,14 +500,38 @@ img {vertical-align: middle;}
   transform: rotate(45deg);
 }
 
+.button3
+{
+  width: 20%;
+  height: 3%;
+  font-size: 130%;
+  border-radius: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button3:hover
+{
+  background-color: #2196F3;
+}
+
+.text2
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 130%;
+}
+
 /*CHECK BOX END*/
 </style>
 </head>
 <body>
 
-<?php
-    include_once('header.html');
-    ?>
+<div class="header">
+  <h1 class="h1">THE NO HUNGER WEBSITE</h1>
+  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <h2 class="h2">the motive line</h2>
+  <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
+    block on the right.</h3></marquee>
+</div>
 
 <div class="navbar">
   <a href="index.php"><image src="images/home/home.jpg" width="30" height="30" class="navimage"></image></a>
@@ -502,33 +557,33 @@ img {vertical-align: middle;}
   <div class="leftcolumn">
     <div class="card1">
       <h1 class="new-h1">COOKED FOOD DONATION</h1>
-    <form method="post">
+    <form>
     <label for="fname"> Donator's Name</label>
-     <input type="text" id="fname" name="d_name" placeholder="Enter Hotel's Name" required>
+     <input type="text" id="fname" placeholder="Enter Hotel's Name" required>
 
      <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Enter your Email ID" required>
+    <input type="email" id="email" placeholder="Enter your Email ID" required>
 
      <label for="Number"> Contact Number</label>
-     <input type="text" id="number" name="c_name" placeholder="Enter Contact No." required>
+     <input type="text" id="number" placeholder="Enter Contact No." required>
 
      <label for="uname">City</label>
-     <input type="text" id="uname" name="city"  placeholder="Enter City Name" required>
+     <input type="text" id="uname" placeholder="Enter City Name" required>
 
      <label for="add">Address</label>
-     <input type="text" id="add"  name="address" placeholder="Enter Address" required>
+     <input type="text" id="add" placeholder="Enter Address" required>
 
      <label for="person">The Food provided can feed how much person ?</label>
-     <input type="text" id="person" name="feed" placeholder="Enter the number of person's" required>
+     <input type="text" id="person" placeholder="Enter the number of person's" required>
 
     
     <label for="name">Food Items:</label><p></p>
     <input type="text" id="name" placeholder="Enter the Name of  Cooked Food items " autocomplete="off"><P></P>
 
-    <button class="button2 "id="btnAdd" name="ok" >Add to List</button><p></p>
+    <button class="button2 "id="btnAdd">Add to List</button><p></p>
 
     <label for="list">Food Items List:</label><p></p>
-    <select id="list" name="items" class="list" multiple>
+    <select id="list" name="list" class="list" multiple>
 
     </select><p></p>
     <button class="button2" id="btnRemove">Remove from List</button>
@@ -538,13 +593,16 @@ img {vertical-align: middle;}
     <span class="checkmark"></span>
     </label>
     <label id="label" style="display: none;">Number of Packets</label>
-    <input type="text" id="text" style="display:none" name="no_packets" placeholder="Enter the number of Packets"></input>
+    <input type="text" id="text" style="display:none" placeholder="Enter the number of Packets"></input>
     <p></p>
     <label class="container">
     <input type="checkbox">I Agree to all the terms & conditions & hereby confirm that all the information provided by me is correct .
     <span class="checkmark"></span>
     </label>
-    <input type="submit" name="submit" value="Submit"> 
+    <br>
+    <button onclick="getLocation()" class="button3">My Location</button>
+    <p id="Location" class="text2"></p>
+    <input type="submit" value="Submit"> 
     </form>
     </div>
   </div>
@@ -605,7 +663,7 @@ img {vertical-align: middle;}
         <div class="mySlides fade"> 
           <div class="numbertext">7 / 7</div>
           <img src="images/donate-cooked-food/pic8.png" class="simage">
-          <h2 class="text">A text field will appear in which you can enter the nymwber of packets you required.
+          <h2 class="text">A text field will appear in which you can enter the number of packets you required.
             (NOTE: One packet consist of 2 silver containers , 1 plastic container)
           </h2>
         </div>
@@ -702,6 +760,23 @@ function display(){
         label.style.display = "none";
     }
 }
+
+var x = document.getElementById("Location");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
   </script>
 
 </body>
