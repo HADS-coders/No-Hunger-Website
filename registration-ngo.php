@@ -389,7 +389,7 @@ img {vertical-align: middle;}
 
 <div class="header">
   <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
   <h2 class="h2">the motive line</h2>
   <marquee class="marquee"><h3>Fill the form to get register your NGO.You can help us to achieve our goals.</h3></marquee>
 </div>
