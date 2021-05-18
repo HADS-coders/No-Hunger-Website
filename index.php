@@ -622,7 +622,7 @@ include_once('header.html');
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
       <a href="donate-food.php">Food</a>
-      <a href="#">Money</a>
+      <a href="money-donation.html">Money</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -633,7 +633,7 @@ include_once('header.html');
       <a href="registration-hotel.php">Hotel</a>
     </div>
   </div>   
-  <a href="#">Provide Info</a>
+  <a href="provide-info.html">Provide Info</a>
   <div class="navbar-right"> 
     <a onclick="document.getElementById('id01').style.display='block'"><image src="images/home/avatar.jpg" class="navimage"></a>
   </div>
