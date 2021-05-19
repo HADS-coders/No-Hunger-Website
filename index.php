@@ -716,14 +716,14 @@ include_once('header.html');
 
 <div id="id01" class="modal1">
   <div class="modal1-dailog">
-  <form class="modal1-content animate" action="/action_page.php" method="post">
+  <form class="modal1-content animate" method="POST">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <a onclick="document.getElementById('id02').style.display='block'">
+      <a href="login.php" >
         <img src="images/modal/volunteer.jpg"  class="avatar1"></a>
-      <a onclick="document.getElementById('id03').style.display='block'">  
+      <a href="hotellogin.php">  
       <img src="images/modal/hotel.jpg" alt="Avatar" class="avatar2"></a>
-      <a onclick="document.getElementById('id04').style.display='block'">
+      <a href="ngologin.php">
       <img src="images/modal/ngo.png" alt="Avatar" class="avatar3"></a>
       <h1 class="mtxt">CHOOSE YOUR LOGIN TYPE</h1>
     </div>
@@ -732,58 +732,7 @@ include_once('header.html');
   </div>
 </div>
 
-<!-- #modal 2 -->
-<div id="id02" class="modal2">
-  
-  <form class="modal2-content" action="login.php" method="POST">
-    <div class="imgcontainer animate">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/volunteer.jpg"" alt="Avatar" class="avatar4 animate">
-</div>
-    <div class="container animate">
-     
-      <input type="submit" class="text"  name="sur" value="click to login" >
-      <p></p>
-      
-    </div>
 
-  </form>
-</div>
-
-<!-- #modal 3 -->
-<div id="id03" class="modal3">
-  
-  <form class="modal3-content animate" action="hotellogin.php" method="POST">
-    <div class="imgcontainer animate">
-      <span onclick="document.getElementById('id03').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/hotel.jpg"" alt="Avatar" class="avatar4">
-    </div>
-    <div class="container">
-    <input type="submit" class="text"  name="su" value="click to login" >
-      <p></p>
-
-   
-    </div>
-  </form>
-</div>
-
-
-<!-- #modal 4 -->
-<div id="id04" class="modal4">
-  
-  <form class="modal4-content animate" action="ngologin.php" method="POST">
-    <div class="imgcontainer animate">
-      <span onclick="document.getElementById('id04').style.display='none'" class="close2 animate" title="Close Modal">&times;</span>
-      <img src="images/modal/ngo.png"" alt="Avatar" class="avatar4">
-    </div>
-
-    <div class="container">
-    <input type="submit" class="text"  name="sub" value="click to login" >
-    </div>
-
-    
-  </form>
-</div>
 <!--MODAL END-->
 
 </body>
