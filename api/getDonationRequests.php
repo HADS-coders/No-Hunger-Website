@@ -6,14 +6,17 @@ header('Content-Type: application/json');
 
 include_once('../connection.php');
 
-//Get volunterr lat lang from get req
+#get vol id from GET request
+$vol_id = isset($_GET['vol_id']) ? $_GET['vol_id'] : die();
 
-$vol_latitude = isset($_GET['latitude']) ? $_GET['latitude'] : die();
-$vol_longitude = isset($_GET['longitude']) ? $_GET['longitude'] : die();
-$range = isset($_GET['range']) ? $_GET['range'] : die();
+#fetch lat, lang, range from db of vol
+$query = 'SELECT longitude,latitude,range from vol where vol_id='.$vol_id;
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$stmt->bind_result($vol_longitude,$vol_latitude,$range);
+$stmt->close();
 
 //get all donation req lat lab from db
-
 $query = 'SELECT donation_id,longitude,latitude from donation ';
 
 $stmt = $conn->prepare($query);
@@ -58,6 +61,7 @@ foreach($filtered_id as $id){
             'time'=>$row['time'],
             'latitude'=>$row['latitude'],
             'longitude'=>$row['longitude'],
+            'accepted'=>$row['accepted'],
         );
         $donation_id = $row['donation_id'];
 
@@ -87,6 +91,7 @@ foreach($filtered_id as $id){
                 'name'=>$row['name'],
                 'amount'=>$row['amount'],
             );
+            #adding individual food item to foodItems array
             array_push($foodItems,$foodItem);
         }
 

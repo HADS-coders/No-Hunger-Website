@@ -6,6 +6,7 @@
         private $table = 'vol';
 
         //person properties
+        public $vol_id;
         public $name;
         public $user_name;
         public $email;
@@ -44,7 +45,6 @@
 
             }
             catch(Exception $e){
-                //print error if something goes wrong
                 echo mysqli_error($this->conn);
                 return false;
             }

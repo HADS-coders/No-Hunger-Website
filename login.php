@@ -34,14 +34,17 @@ if(isset($_POST['submit']))
 
   $query="SELECT * FROM vol WHERE EMAIL='$uname' && password='$psw' ";
   $data=mysqli_query($conn,$query);
-
+  while ($row = $data->fetch_assoc()) {
+    $vol_id = $row['vol_id'];
+  }
   $total=mysqli_num_rows($data);
   echo $total;
 
   if($total == 1)
   {
-  // echo "login OK";
- header('Location:index.php');
+    session_start();
+    $_SESSION['vol_id'] = $vol_id;
+    header('Location:food-requests.php');
   }
   else
   {
