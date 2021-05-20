@@ -10,11 +10,13 @@ include_once('../connection.php');
 $vol_id = isset($_GET['vol_id']) ? $_GET['vol_id'] : die();
 
 #fetch lat, lang, range from db of vol
-$query = 'SELECT longitude,latitude,range from vol where vol_id='.$vol_id;
-$stmt = $conn->prepare($query);
-$stmt->execute();
-$stmt->bind_result($vol_longitude,$vol_latitude,$range);
-$stmt->close();
+$query = "SELECT longitude,latitude,rangeKm from vol where vol_id=".$vol_id;
+$result = mysqli_query($conn,$query);
+while($row = $result->fetch_assoc()){
+    $vol_latitude = $row['latitude'];
+    $vol_longitude = $row['longitude'];
+    $range = $row['rangeKm'];
+}
 
 //get all donation req lat lab from db
 $query = 'SELECT donation_id,longitude,latitude from donation ';
