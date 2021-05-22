@@ -19,25 +19,25 @@ while($row = $result->fetch_assoc()){
 }
 
 //get all donation req lat lab from db
-$query = 'SELECT donation_id,longitude,latitude from donation ';
+$query = 'SELECT donation_id,longitude,latitude,vol_id from donation ';
 
-$stmt = $conn->prepare($query);
-
-$stmt->execute();
-
-/* bind result variables */
-$stmt->bind_result($donation_id,$longitude, $latitude);
+$result = mysqli_query($conn,$query);
 
 $filtered_id = array();
 
-while($stmt->fetch()){
+while($row = $result->fetch_assoc()){
+    $donation_id = $row['donation_id'];
+    $latitude = $row['latitude'];
+    $longitude = $row['longitude'];
+    $donation_vol_id = $row['vol_id'];
 
-    $distance = getDistanceBetweenPointsNew($latitude,$longitude,$vol_latitude,$vol_longitude,'kilometers');
-    if($distance <= $range){
-        array_push($filtered_id,$donation_id);
+    if($donation_vol_id==null or $vol_id==$donation_vol_id){
+        $distance = getDistanceBetweenPointsNew($latitude,$longitude,$vol_latitude,$vol_longitude,'kilometers');
+        if($distance <= $range){
+            array_push($filtered_id,$donation_id);
+        }
     }
 }
-
 
 $filtered_data = array();
 $filtered_data['data'] = array();
@@ -52,7 +52,7 @@ foreach($filtered_id as $id){
 
     //get donation detail 
     $query = 'select * from donation where donation_id = '.$id;
-    $result = $conn->query($query);
+    $result = mysqli_query($conn,$query);
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     foreach($rows as $row){
         $donation = array(
@@ -117,7 +117,7 @@ function getDistanceBetweenPointsNew($latitude1, $longitude1, $latitude2, $longi
       case 'miles': 
         break; 
       case 'kilometers' : 
-        $distance = $distance * 1.609344; 
+        $distance = $distance * 1.609344;
     } 
     return (round($distance,2)); 
   }

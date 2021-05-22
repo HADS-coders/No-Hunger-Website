@@ -13,8 +13,9 @@ include_once('../connection.php');
 $input = json_decode(file_get_contents('php://input'));
 
 $donation_id = $input->donation_id;
+$vol_id = $input->vol_id;
 
-$query = 'UPDATE donation set accepted = 1 where donation_id ='.$donation_id;
+$query = 'UPDATE donation set accepted = 1, vol_id = '.$vol_id.' where donation_id ='.$donation_id;
 $result = mysqli_query($conn,$query);
 if($result){
     echo json_encode(array('message'=>'success'));
