@@ -527,7 +527,7 @@ img {vertical-align: middle;}
 
 <div class="header">
   <h1 class="h1">THE NO HUNGER WEBSITE</h1>
-  <div class="img"><image src="home/logo.jpg"  width="150" height="150" ></image></div> 
+  <div class="img"><image src="images/home/logo.jpg"  width="150" height="150" ></image></div> 
   <h2 class="h2">the motive line</h2>
   <marquee class="marquee"><h3>To know the procedure about how to add food itmes in the list refer the procedure 
     block on the right.</h3></marquee>
@@ -539,7 +539,7 @@ img {vertical-align: middle;}
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
       <a href="donate-food.php">Food</a>
-      <a href="money-donation.html">Money</a>
+      <a href="money-donation.php">Money</a>
     </div>
   </div> 
   <div class="dropdown">

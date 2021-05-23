@@ -476,7 +476,7 @@ img {vertical-align: middle;}
 <div class="header">
     <div class="up-section">
       <div class="logo">
-        <img src="logo.jpg"  width="150px" height="150px" >
+        <img src="images/home/logo.jpg"  width="150px" height="150px" >
       </div>
       <div class="title-section">
         <h1 class="title">THE NO HUNGER WEBSITE</h1>
@@ -490,12 +490,12 @@ img {vertical-align: middle;}
 <body>
 
 <div class="navbar">
-  <a href="index.php"><image src="home.jpg" width="30" height = "30" class="navimage"></image></a>
+  <a href="index.php"><image src="images/home/home.jpg" width="30" height = "30" class="navimage"></image></a>
   <div class="dropdown">
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
       <a href="donate-food.php">Food</a>
-      <a href="Money_donation.php">Money</a>
+      <a href="money-donation.php">Money</a>
     </div>
   </div>
   <div class="dropdown">
@@ -560,31 +560,31 @@ img {vertical-align: middle;}
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 5</div>
-          <img src="donate-money/pic1.jpeg" class="simage">
+          <img src="images/donate-money/pic1.jpeg" class="simage">
           <h2 class="text">Volunteer's are the root elements of our team.</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 5</div>
-          <img src="donate-money/pic2.jpeg" class="simage">
+          <img src="images/donate-money/pic2.jpeg" class="simage">
           <h2 class="text">Volunteers has to collect the food from hotels.</h2>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 5</div>
-          <img src="donate-money/pic3.jpeg" class="simage">
+          <img src="images/donate-money/pic3.jpeg" class="simage">
           <h2 class="text">Pack the food provided by the hotels.</h2>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">4 / 5</div>
-          <img src="donate-money/pic4.jpeg" class="simage">
+          <img src="images/donate-money/pic4.jpeg" class="simage">
           <h2 class="text">Distribute the packets to the needy.</h2>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">5 / 5</div>
-          <img src="donate-money/pic5.jpeg" class="simage">
+          <img src="images/donate-money/pic5.jpeg" class="simage">
           <h2 class="text">Distribute the packets to the needy.</h2>
         </div>
         

@@ -404,7 +404,7 @@ img {vertical-align: middle;}
     <button class="dropbutton">Donation</button>
     <div class="dropdown-content">
       <a href="donate-food.php">Food</a>
-      <a href="money-donation.html">Money</a>
+      <a href="money-donation.php">Money</a>
     </div>
   </div> 
   <div class="dropdown">

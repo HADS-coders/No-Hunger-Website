@@ -440,7 +440,7 @@
         <button class="dropbutton">Donation</button>
         <div class="dropdown-content">
           <a href="donate-food.php">Food</a>
-          <a href="money-donation.html">Money</a>
+          <a href="money-donation.php">Money</a>
         </div>
       </div> 
       <div class="dropdown">
@@ -457,34 +457,29 @@
     <div class="row">
       <div class="leftcolumn">
         <div class="card1">
-          <h1 class="new-h1">HOTEL'S REGISTRATION</h1>
-        <form>
+          <h1 class="new-h1">MONEY DONATION</h1>
+        <form method="post">
          <label for="fname"> Name</label>
-         <input type="text" id="fname" placeholder="Enter your Name" required>
+         <input type="text" id="fname" name="name" placeholder="Enter your Name" required>
          <label for="email">Email</label>
-         <input type="email" id="email" placeholder="Enter your Email ID">
+         <input type="email" id="email" name="email" placeholder="Enter your Email ID">
          <label for="Number"> Contact Number</label>
-         <input type="number" id="fname" name="contact" placeholder="Enter your Contact no" required>
-         <label for="Address"> Address</label>
-         <input type="text" id="fname" name="address" placeholder="Enter your Residence Address" required>
+         <input type="number" id="number" name="number" placeholder="Enter your Contact no" required>
            <br>
            <br>
          <div class="slidecontainer">
-           <input type="range" min="1" max="100" value="20" class="slider" id="myRange">
+           <input type="range" min="1" max="100" value="20" name="amount" class="slider" id="myRange">
            <br>
            <p class="value"> DONATION MONEY : <span id="rupees"></span> Rupees </p>
            <p class="value"> NUMBER OF PACKETS : <span id="pack"></span></p>
          </div>
-         <input type="submit" value="Donate">
+         <input type="submit" value="Donate" name="donate">
         </form>
         </div>
       </div>
       <div class="rightcolumn">
         <div class="card2">
-    
           <div class="slideshow-container">
-    
- 
             <div class="mySlides fade">
                 <div class="numbertext">1 / 5</div>
                 <img src="images/donate-money/pic1.jpeg" class="simage">
@@ -520,8 +515,8 @@
         </div>
     
         <div class="card">
-          <h3> Number of Hotel's associated with us</h3>
-          <p>3000+ hotel's currently working with us</p>
+          <h3> Number of Volunteers associated with us</h3>
+          <p>3000+ volunteer currently working with us</p>
         </div>
         <div class="card">
           <h3>Food donated till now</h3>
@@ -560,10 +555,40 @@
         output2.innerHTML = slider.value;
 
         slider.oninput = function() {
-        output1.innerHTML = this.value*100;
+        output1.innerHTML = this.value*100;        
         output2.innerHTML = this.value;
         }
       </script>
     
     </body>
 </html>
+
+<?php
+// this is connection file name
+include_once('connection.php');
+
+if(isset($_POST['donate'])){
+    echo "post request";
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $number = $_POST['number'];
+    $amount = $_POST['amount']*100;
+
+    $insertquery = " insert into money(name,email,number,amount) values('$name','$email','$number','$amount')";
+    $result = mysqli_query($conn,$insertquery);
+
+    if($result){
+        ?>
+        <script>
+            alert("data inserted properly");
+        </script>
+        <?php
+    }else{
+        ?>
+        <script>
+            alert("data not inserted");
+        </script>
+        <?php
+    }
+}
+?>
