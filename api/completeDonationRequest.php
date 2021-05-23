@@ -14,12 +14,11 @@ $input = json_decode(file_get_contents('php://input'));
 
 $donation_id = $input->donation_id;
 
-$select_query = 'SELECT donation_id, name,number,email,latitude,longitude,time from donation where donation_id='.$donation_id;
+$select_query = 'SELECT donation_id, name,number,email,latitude,longitude,time,vol_id from donation where donation_id='.$donation_id;
 $select_result = mysqli_query($conn,$select_query);
 while($row=$select_result->fetch_assoc()){
-    $insert_query = 'INSERT into completed_donation values ('.$donation_id.',"'.$row['name'].'",'.$row['number'].',"'.$row['email'].'",'.$row['latitude'].','.$row['longitude'].',"'.$row['time'].'")';
+    $insert_query = 'INSERT into completed_donation values ('.$donation_id.',"'.$row['name'].'",'.$row['number'].',"'.$row['email'].'",'.$row['latitude'].','.$row['longitude'].',"'.$row['time'].'",'.$row['vol_id'].')';
     $insert_result = mysqli_query($conn,$insert_query);
-    
 }
 if($insert_result){
     $delete_query = 'DELETE from donation where donation_id='.$donation_id;
