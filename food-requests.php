@@ -200,10 +200,11 @@ body {
 
 /* Add a card effect for articles */
 .card1{
-  border-radius: 5%;
+  border-radius: 2%;
   background-color:white;
   padding: 20px;
   margin-top: 20px;
+  margin-left: 20px;
   block-size: 930px;
 }
 .card {
@@ -347,8 +348,8 @@ img {vertical-align: middle;}
   width: 10%;
   height:41%;
   position: absolute;
-  top: 47%;
-  right: 15%;
+  top: 38%;
+  right: 14%;
   margin: auto;
 }
 
@@ -446,9 +447,20 @@ img {vertical-align: middle;}
 .request-box{
     display: flex;
     justify-content: space-between;
-    background-color: greenyellow;
+    border: 3px solid rgb(46, 175, 169);
+    border-radius: 10px;
     padding: 10px 10px;
     margin: 10px 0px;
+}
+
+.location{
+  display:block;
+  background-color: rgb(46, 175, 169); 
+  color: white;
+  padding:10px;
+  text-align:center; 
+  text-decoration: none;
+  border-radius:20px; 
 }
 
 .right{
@@ -506,13 +518,13 @@ img {vertical-align: middle;}
       <a href="registration-hotel.php">Hotel</a>
     </div>
   </div>
-  <a href="provide-info.php">Provide Info</a>
+  <a href="provide-info.html">Provide Info</a>
 </div>
- 
+
 <div class="row">
   <div class="leftcolumn">
     <div class="card1">
-    <p style="font-size: 30px;">Food Donation Request Detail</p>
+    <h1 style="font-size: 30px;">Food Donation Requests</h1>
 
         <?php
         #loop through each donation request display data
@@ -525,7 +537,7 @@ img {vertical-align: middle;}
 
                 <div class="request-box">
                     <div class="left">
-                        <p>Name: <?php echo $data->donation->name; ?></p>
+                        <p style="font-weight: bold;">Name: <?php echo $data->donation->name; ?></p>
                         <p>Email: <?php echo $data->donation->email; ?></p>
                         <p>Number: <?php echo $data->donation->number; ?></p>
                         <p>Food Type: <?php echo $data->food->type; ?></p>
@@ -536,9 +548,10 @@ img {vertical-align: middle;}
                             <p>Food Name: <?php echo $foodItem->name; ?></p>
                             <p>Amount: <?php echo $foodItem->amount; ?></p>
                         <?php } ?>
-                        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=<?php echo $data->donation->latitude; ?>,<?php echo $data->donation->longitude; ?>">See Location</a>
+                        <a class="location" target="_blank" href="https://www.google.com/maps/search/?api=1&query=<?php echo $data->donation->latitude; ?>,<?php echo $data->donation->longitude; ?>">See Location</a>
                     </div>
                     <div class="right">
+                        <!-- <div style="display:block; padding: 20px; background-color: #04AA6D;"> <a href="#" onclick="" >Accept</a></div> -->
                         <div style="margin:auto 20px"><p>Accept: </br> <?php echo "<img src='images/tick.jpg' >"; ?></p> </div>
                         <div style="margin:auto 20px"><p>Completed: </br> <?php echo "<img src='images/tick.jpg' >"; ?></p>  </div>
                     </div>
