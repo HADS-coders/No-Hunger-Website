@@ -568,7 +568,6 @@
 include_once('connection.php');
 
 if(isset($_POST['donate'])){
-    echo "post request";
     $name = $_POST['name'];
     $email = $_POST['email'];
     $number = $_POST['number'];

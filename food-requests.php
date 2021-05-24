@@ -205,7 +205,6 @@ body {
   padding: 20px;
   margin-top: 20px;
   margin-left: 20px;
-  block-size: 930px;
 }
 .card {
   border-radius: 5%;
@@ -447,21 +446,105 @@ img {vertical-align: middle;}
 .request-box{
     display: flex;
     justify-content: space-between;
-    border: 3px solid rgb(46, 175, 169);
+    background-image:linear-gradient(to right,rgb(83, 198, 226),rgb(15, 88, 184));
+    border: 3px solid rgb(41, 119, 221);
     border-radius: 10px;
     padding: 10px 10px;
     margin: 10px 0px;
+    font-size: 150%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .location{
   display:block;
-  background-color: rgb(46, 175, 169); 
+  background-color: rgb(15, 88, 184); 
   color: white;
   padding:10px;
   text-align:center; 
   text-decoration: none;
   border-radius:20px; 
 }
+
+.location:hover{
+  background-color: #04AA6D;
+}
+
+.main {
+			/* display: block; */
+			position: relative;
+			padding-left: 45px;
+			margin-bottom: 15px;
+      margin-left: 30px;
+			cursor: pointer;
+			font-size: 20px;
+      text-align: center;
+      align-items: center;
+		}
+		
+		/* Hide the default checkbox */
+		input[type=checkbox] {
+			visibility: hidden;
+		}
+		
+		/* Creating a custom checkbox
+		based on demand */
+		.geekmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: white;
+		}
+		
+		/* Specify the background color to be
+		shown when hovering over checkbox */
+		.main:hover input ~ .geekmark {
+			background-color: yellow;
+		}
+		
+		/* Specify the background color to be
+		shown when checkbox is active */
+		.main input:active ~ .geekmark {
+			background-color: red;
+		}
+		
+		/* Specify the background color to be
+		shown when checkbox is checked */
+		.main input:checked ~ .geekmark {
+			background-color: green;
+		}
+		
+		/* Checkmark to be shown in checkbox */
+		/* It is not be shown when not checked */
+		.geekmark:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+		
+		/* Display checkmark when checked */
+		.main input:checked ~ .geekmark:after {
+			display: block;
+		}
+		
+		/* Styling the checkmark using webkit */
+		/* Rotated the rectangle by 45 degree and
+		showing only two border to make it look
+		like a tickmark */
+		.main .geekmark:after {
+			left: 8px;
+			bottom: 5px;
+			width: 6px;
+			height: 12px;
+			border: solid white;
+			border-width: 0 4px 4px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+      
+		}
+
 
 .right{
     display: flex;
@@ -537,7 +620,7 @@ img {vertical-align: middle;}
 
                 <div class="request-box">
                     <div class="left">
-                        <p style="font-weight: bold;">Name: <?php echo $data->donation->name; ?></p>
+                        <p>Name: <?php echo $data->donation->name; ?></p>
                         <p>Email: <?php echo $data->donation->email; ?></p>
                         <p>Number: <?php echo $data->donation->number; ?></p>
                         <p>Food Type: <?php echo $data->food->type; ?></p>
@@ -552,8 +635,22 @@ img {vertical-align: middle;}
                     </div>
                     <div class="right">
                         <!-- <div style="display:block; padding: 20px; background-color: #04AA6D;"> <a href="#" onclick="" >Accept</a></div> -->
-                        <div style="margin:auto 20px"><p>Accept: </br> <?php echo "<img src='images/tick.jpg' >"; ?></p> </div>
-                        <div style="margin:auto 20px"><p>Completed: </br> <?php echo "<img src='images/tick.jpg' >"; ?></p>  </div>
+                        <div style="margin:auto 15px; text-align:center;">
+                          <p style="text-align:center;" > Accept:  <br> <br> 
+                            <label  class="main">
+                              <input style="text-align:center;" type="checkbox">
+                              <span style="text-align:center;" class="geekmark"></span>
+                            </label>
+                          </p> 
+                        </div>
+                        <div style="margin:auto 10px;text-align:center;">
+                          <p>Completed: <br> <br>
+                            <label class="main">
+                              <input type="checkbox">
+                              <span class="geekmark"></span>
+                            </label>  
+                          </p>  
+                        </div>
                     </div>
                 </div>
 
