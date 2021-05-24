@@ -480,7 +480,12 @@ img {vertical-align: middle;}
       <option value="Friday">Friday</option>
       <option value="Saturday">Saturday</option>
      </select>
-      <p></p>
+      <br>
+      <button onclick="getLocation()" class="button3">My Location</button>
+      <p id="Location" class="text2"></p>
+      <input type="hidden" id="latitude" name="latitude"></input>
+      <input type="hidden" id="longitude" name="longitude"></input>
+      <br>
      <input type="submit" name="submit" value="Submit" onclick="setLatLang()">
     </form>
     </div>
@@ -539,6 +544,8 @@ img {vertical-align: middle;}
   
   function showSlides() {
     var i;
+    var latitude;
+    var longitude;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
@@ -548,6 +555,24 @@ img {vertical-align: middle;}
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
     setTimeout(showSlides, 4000); // Change image every 2 seconds
+  }
+
+  var x = document.getElementById("Location");  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    document.getElementById("latitude").setAttribute('value', latitude);
+    document.getElementById("longitude").setAttribute('value', longitude);
+    x.innerHTML = "Latitude: " + latitude + 
+    "<br>Longitude: " + longitude;
   }
 
   </script>
@@ -567,15 +592,15 @@ if(isset($_POST['submit']))
   $range = $_POST['range'];
   $from=$_POST['from'];
   $till=$_POST['till'];
-  $latitude = 18.9863049;
-  $longitude = 73.1069343;
+  $latitude = $_POST['latitude'];
+  $longitude = $_POST['longitude'];
 
-  $query="INSERT INTO vol VALUES ('$name','$email','$number','$password', '$gender', '$from','$till','$range','$latitude','$longitude')";
+  $query="INSERT INTO vol (name,email,number,password,gender,daysfrom,till,rangeKm,latitude,longitude) VALUES ('$name','$email','$number','$password', '$gender', '$from','$till','$range','$latitude','$longitude')";
   $data=mysqli_query($conn,$query);
 
   if($data)
   {
-  echo "Data inserted into Database";
+  // echo "Data inserted into Database";
   }
   else
   {
