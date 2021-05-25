@@ -594,7 +594,7 @@ img {vertical-align: middle;}
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbutton">Donation</button>
+    <button class="dropbutton">Registration</button>
     <div class="dropdown-content">
       <a href="registration-volunteer.php">Volunteer</a>
       <a href="registration-ngo.php">NGO</a>
