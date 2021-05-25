@@ -19,7 +19,7 @@ while($row = $result->fetch_assoc()){
 }
 
 //get all donation req lat lab from db
-$query = 'SELECT donation_id,longitude,latitude,vol_id from donation ';
+$query = 'SELECT donation_id,longitude,latitude,vol_id from donation order by time desc';
 
 $result = mysqli_query($conn,$query);
 
